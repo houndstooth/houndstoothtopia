@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+#interface {
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
+    position: fixed;
+    align-items: flex-end;
+    bottom: 1rem;
+    right: 1rem;
+}
+
+#toggle {
+    color: #000;
+    font-size: 24px;
+    font-family: Arial;
+    cursor: pointer;
+    pointer-events: all;
+}
