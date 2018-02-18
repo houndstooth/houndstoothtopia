@@ -9,12 +9,14 @@ import updateWorld from '../world/updateWorld'
 
 const animate = () => {
     updateWorld()
+    player.update()
     if (vrEffect.isPresenting) {
-        player.update()
         vrControls.update()
         vrControllers.update()
     }
-    vrEffect.render(scene, state.currentCamera)
+    if (!state.noVR) {
+        vrEffect.render(scene, state.currentCamera)
+    }
     if (vrEffect.isPresenting) renderer.render(scene, state.currentCamera)
 }
 
