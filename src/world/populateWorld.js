@@ -89,7 +89,7 @@ const populateWorld = async () => {
 
     addItem({
         name: 'houndstamp',
-        geometry: geometry.houndstampExtruded,
+        geometry: geometry.houndstampGreaterExtruded,
         position: [30, 3, 30],
     })
 
@@ -97,6 +97,12 @@ const populateWorld = async () => {
         name: 'houndsject the lesser',
         geometry: geometry.houndsjectLesser,
         position: [0, 30, 0],
+    })
+
+    addItem({
+        name: 'houndstamp the lesser',
+        geometry: geometry.houndstampLesser,
+        position: [0,3, 0],
     })
 }
 
