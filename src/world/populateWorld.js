@@ -33,9 +33,9 @@ const populateWorld = async () => {
         rotation: [0, -Math.PI / 2, 0]
     })
 
-    for (let i = 0; i < 4; i++) {
-        for (let j = 0; j < 4; j++) {
-            for (let k = 0; k < 4; k++) {
+    for (let i = 0; i < 2; i++) {
+        for (let j = 0; j < 2; j++) {
+            for (let k = 0; k < 2; k++) {
                 addItem({
                     name: 'houndsjectTile',
                     geometry: geometry.houndsjectGreater,
@@ -102,7 +102,19 @@ const populateWorld = async () => {
     addItem({
         name: 'houndstamp the lesser',
         geometry: geometry.houndstampLesser,
-        position: [0,3, 0],
+        position: [20, 3, 0],
+    })
+
+    addItem({
+        name: 'houndstamp the greater by roots',
+        geometry: geometry.houndstampGreaterRoots,
+        position: [10, 10, 10],
+    })
+
+    addItem({
+        name: 'houndstamp the greater by cusps',
+        geometry: geometry.houndstampGreaterCusps,
+        position: [-10, 10, -10],
     })
 }
 
