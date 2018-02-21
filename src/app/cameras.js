@@ -28,7 +28,10 @@ const orthographicCamera = new OrthographicCamera(
     ORTHOGRAPHIC_FRUSTUM_FAR,
 )
 
+let currentCamera
+
 export {
     perspectiveCamera,
     orthographicCamera,
+    currentCamera,
 }

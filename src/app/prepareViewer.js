@@ -1,11 +1,10 @@
-import {orthographicCamera} from './cameras'
+import * as cameras from './cameras'
 import renderer from './renderer'
 import resizeWindow from './resizeWindow'
-import * as state from './state'
 import toggleVR from './toggleVr'
 
 const prepareViewer = () => {
-    state.currentCamera = orthographicCamera
+    cameras.currentCamera = cameras.orthographicCamera
 
     document.querySelector('#viewer').appendChild(renderer.domElement)
 

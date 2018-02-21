@@ -1,5 +1,4 @@
-import {orthographicCamera, perspectiveCamera} from './cameras'
-import * as state from './state'
+import * as cameras from './cameras'
 import vrEffect from './vrEffect'
 
 const toggleVR = () => vrEffect.isPresenting ? exitPresent() : enterPresent()
@@ -7,31 +6,13 @@ const toggleVR = () => vrEffect.isPresenting ? exitPresent() : enterPresent()
 const exitPresent = () => {
     if (!vrEffect.isPresenting) return
     vrEffect.exitPresent()
-    state.currentCamera = orthographicCamera
+    cameras.currentCamera = cameras.orthographicCamera
 }
 
 const enterPresent = () => {
     if (vrEffect.isPresenting) return
-    try {
-        vrEffect.requestPresent()
-    } catch(e) {
-        state.noVR = true
-    }
-    state.currentCamera = perspectiveCamera
-
-    /*
-    // try {
-        vrEffect.requestPresent().catch(() => {
-        console.log('caught')
-            state.noVR = true
-        }).then(() => {
-        console.log('still omre stuf to do')
-        state.currentCamera = perspectiveCamera
-        })
-    // } catch(e) {
-    //
-    // }
-     */
+    vrEffect.requestPresent().catch(() => {})
+    cameras.currentCamera = cameras.perspectiveCamera
 }
 
 export default toggleVR
