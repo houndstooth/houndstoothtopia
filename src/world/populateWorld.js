@@ -56,17 +56,17 @@ const populateWorld = async () => {
         }
     }
 
-    for (let i = 0; i < 100; i++) {
-        const randomScale = Math.random() * 10
-        addItem({
-            name: 'cloud',
-            geometry: geometry.houndstrudeCompound,
-            rotation: [Math.PI / 2, 0, Math.random() * Math.PI],
-            color: new Color(0xffffff),
-            position: [1000 - Math.random() * 2000, 175, 1000 - Math.random() * 2000],
-            scale: [randomScale, randomScale, randomScale],
-        })
-    }
+    // for (let i = 0; i < 100; i++) {
+    //     const randomScale = Math.random() * 10
+    //     addItem({
+    //         name: 'cloud',
+    //         geometry: geometry.houndstrudeCompound,
+    //         rotation: [Math.PI / 2, 0, Math.random() * Math.PI],
+    //         color: new Color(0xffffff),
+    //         position: [1000 - Math.random() * 2000, 175, 1000 - Math.random() * 2000],
+    //         scale: [randomScale, randomScale, randomScale],
+    //     })
+    // }
 
     addItem({
         name: 'spherical-houndstooth',
