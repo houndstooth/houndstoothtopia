@@ -1,12 +1,28 @@
-const audioCtx = new (window.AudioContext || window.webkitAudioContext)()
+import buildVoice from './buildVoice'
+import buildEntity from './buildEntity'
 
-const BASE_GAIN = 0.1
 const SHORT_BEAT = 30
-const LONG_BEAT = Math.sqrt(2) * SHORT_BEAT
-const SUSTAIN = 6
+const LONG_BEAT = SHORT_BEAT * Math.sqrt(2)
+const DOUBLE_LONG_BEAT = LONG_BEAT * 2
+
+const SUPERTILE_NOTES = [
+  {duration: SHORT_BEAT, pitch: 0}, {duration: LONG_BEAT, pitch: 0},
+  {duration: SHORT_BEAT, pitch: 0}, {duration: SHORT_BEAT, pitch: 0}, {duration: LONG_BEAT, pitch: 0},
+  {duration: SHORT_BEAT, pitch: 0}, {duration: SHORT_BEAT, pitch: 0}, {duration: LONG_BEAT, pitch: 0}, {duration: LONG_BEAT, pitch: 0},
+  {duration: SHORT_BEAT, pitch: 0}, {duration: LONG_BEAT, pitch: 0}, {duration: LONG_BEAT, pitch: 0},
+]
+
+const PERIMETER_NOTES = [
+  {duration: SHORT_BEAT, pitch: 0}, {duration: LONG_BEAT, pitch: 1},
+  {duration: SHORT_BEAT, pitch: 2}, {duration: SHORT_BEAT, pitch: 2}, {duration: LONG_BEAT, pitch: 3},
+  {duration: SHORT_BEAT, pitch: 2}, {duration: DOUBLE_LONG_BEAT, pitch: 2},
+  {duration: SHORT_BEAT, pitch: 4}, {duration: LONG_BEAT, pitch: 4},
+  {duration: SHORT_BEAT, pitch: 5}, {duration: SHORT_BEAT, pitch: 4}, {duration: LONG_BEAT, pitch: 4},
+  {duration: SHORT_BEAT, pitch: 3}, {duration: DOUBLE_LONG_BEAT, pitch: 2},
+]
 
 const BASE_PITCH = 440
-const PITCHES = [
+const supertilePitches = [
   BASE_PITCH,
   BASE_PITCH * Math.sqrt(3),
   BASE_PITCH * 3 / 2,
@@ -14,54 +30,36 @@ const PITCHES = [
   BASE_PITCH * 9 / 8,
   BASE_PITCH * 9 * Math.sqrt(3) / 16,
 ]
+const supertileVoices = supertilePitches.map(buildVoice)
 
-const RHYTHM = [
-  SHORT_BEAT, LONG_BEAT,
-  SHORT_BEAT, SHORT_BEAT, LONG_BEAT,
-  SHORT_BEAT, SHORT_BEAT, LONG_BEAT, LONG_BEAT,
-  SHORT_BEAT, LONG_BEAT, LONG_BEAT
+const PERIMETER_BASE_PITCH = 220
+const perimeterPitches = [
+  PERIMETER_BASE_PITCH,
+  PERIMETER_BASE_PITCH * Math.sqrt(3),
+  PERIMETER_BASE_PITCH * 3,
+  PERIMETER_BASE_PITCH * 3 * Math.sqrt(3),
+  PERIMETER_BASE_PITCH * 9,
+  PERIMETER_BASE_PITCH * 9 * Math.sqrt(3),
+  PERIMETER_BASE_PITCH * 27,
 ]
+const perimeterVoices = perimeterPitches.map(buildVoice)
 
-const voice = pitch => {
-  const newVoice = {
-    oscNode: audioCtx.createOscillator(),
-      gainNode: audioCtx.createGain(),
-  }
-
-  newVoice.oscNode.connect(newVoice.gainNode)
-  newVoice.gainNode.connect(audioCtx.destination)
-  newVoice.oscNode.type = 'sine'
-  newVoice.oscNode.frequency.value = pitch
-  newVoice.gainNode.gain.value = 0
-  newVoice.oscNode.start()
-
-  return newVoice
-}
-
-let voices = PITCHES.map(voice)
+const entities = [
+  buildEntity({ notes: SUPERTILE_NOTES, voices: supertileVoices }),
+  buildEntity({ notes: PERIMETER_NOTES, voices: perimeterVoices }),
+]
+//
+// const composeChordOutOfAllVoicesRandomlyWeightedButTotalingToAConstantVolume = (entity) => {
+//   let gainMap = entity.voices.map(Math.random)
+//   const total = gainMap.reduce((sum, cur) => sum += cur, 0)
+//   gainMap = gainMap.map(gain => gain / total)
+//
+//   entity.voices.forEach((voice, index) => voice.gainNode.gain.value = gainMap[index] * BASE_GAIN)
+// }
 
 let time = 0
 
-let timeToPlayNextNote = 0
-let timeToStopPlayingNote = SUSTAIN
-
-let rhythmCellIndex = 0
-
 export default () => {
   time++
-
-  if (time > timeToPlayNextNote) {
-    let gainMap = voices.map(Math.random)
-    const total = gainMap.reduce((sum, cur) => sum += cur, 0)
-    gainMap = gainMap.map(gain => gain / total)
-
-    voices.forEach((voice, index) => voice.gainNode.gain.value = gainMap[index] * BASE_GAIN)
-    timeToPlayNextNote += RHYTHM[rhythmCellIndex]
-  } else if (time > timeToStopPlayingNote) {
-    voices.forEach(voice => voice.gainNode.gain.value = 0)
-    timeToStopPlayingNote += RHYTHM[rhythmCellIndex]
-    rhythmCellIndex++
-  }
-
-  if (rhythmCellIndex === RHYTHM.length) rhythmCellIndex = 0
+  entities.forEach(entity => entity.update(time))
 }
