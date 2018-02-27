@@ -146,6 +146,18 @@ const populateWorld = async () => {
     geometry: geometry.houndstoothPrismCompositeWithSwirl,
     position: [-50, 2, 0],
   })
+
+    addItem({
+        name: 'houndslathe root to conid',
+        geometry: geometry.houndslatheRootToConid,
+        position: [-60, 10, -10],
+    })
+
+    addItem({
+        name: 'houndslathe root to conid',
+        geometry: geometry.houndslatheCuspsToRoot,
+        position: [-70, 10, -10],
+    })
 }
 
 export default populateWorld
