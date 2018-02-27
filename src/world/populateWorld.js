@@ -116,6 +116,36 @@ const populateWorld = async () => {
         geometry: geometry.houndstampGreaterCusps,
         position: [-10, 10, -10],
     })
+
+  addItem({
+    name: 'houndslathe with a cusp touching the spoke',
+    geometry: geometry.houndslatheCuspSpoke,
+    position: [-10, 2, 0],
+  })
+
+  addItem({
+    name: 'houndslathe with a root touching the spoke',
+    geometry: geometry.houndslatheRootSpokeBlended,
+    position: [-20, 2, 0],
+  })
+
+  addItem({
+    name: 'houndstooth prism',
+    geometry: geometry.houndstoothPrism,
+    position: [-30, 2, 0],
+  })
+
+  addItem({
+    name: 'composite of houndstooth prisms where they are oriented to converge onto a vertex',
+    geometry: geometry.houndstoothPrismComposite,
+    position: [-40, 2, 0],
+  })
+
+  addItem({
+    name: 'composite of houndstooth prisms where they are oriented in a swirl around a vertex',
+    geometry: geometry.houndstoothPrismCompositeWithSwirl,
+    position: [-50, 2, 0],
+  })
 }
 
 export default populateWorld
