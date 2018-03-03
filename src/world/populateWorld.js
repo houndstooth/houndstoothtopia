@@ -168,7 +168,7 @@ const populateWorld = async () => {
         position: [-50, 2, 0],
     })
 
-    // octahedra
+    // hedra
 
     addItem({
         name: 'octahedstooth with its homogeneous faces roots',
@@ -180,6 +180,12 @@ const populateWorld = async () => {
         name: 'octahedstooth with its homogeneous faces cusps',
         geometry: geometry.ht3d_037_octahedstoothWithItsHomogeneousFacesCusps,
         position: [-30, 2, 50],
+    })
+
+    addItem({
+        name: 'rhombic dodecahedstooth',
+        geometry: geometry.ht3d_032_rhombicDodecahedstooth,
+        position: [-30, 2, 60],
     })
 }
 
