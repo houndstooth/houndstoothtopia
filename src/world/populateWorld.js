@@ -93,13 +93,6 @@ const populateWorld = async () => {
     //   position: [30, 40, -20],
     // })
 
-    addItem({
-        name: 'cylindrical houndstooth',
-        geometry: geometry.ht3d_007_houndslathe,
-        rotation: [Math.PI, 0, 0],
-        position: [20, 4, -20],
-    })
-
     // OG
 
     addItem({
@@ -122,7 +115,20 @@ const populateWorld = async () => {
         position: [20, 3, 0],
     })
 
-    // toroids
+    // toroids and lathes
+
+    addItem({
+        name: 'cylindrical houndstooth',
+        geometry: geometry.ht3d_007_houndslatheInterior,
+        rotation: [Math.PI, 0, 0],
+        position: [20, 4, -20],
+    })
+
+    addItem({
+        name: 'double cylindrical houndstooth',
+        geometry: geometry.ht3d_010_houndslatheExterior,
+        position: [20, 4, -30],
+    })
 
     addItem({
         name: 'houndstooth horn toroid - cusp to cusp',
