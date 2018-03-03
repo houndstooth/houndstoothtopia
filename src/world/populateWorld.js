@@ -148,11 +148,11 @@ const populateWorld = async () => {
         position: [-20, 2, 0],
     })
 
-    // addItem({
-    //   name: 'houndstooth arch',
-    //   geometry: geometry.houndstoothArch,
-    //   position: [-20, 2, 0],
-    // })
+    addItem({
+      name: 'houndstooth arch',
+      geometry: geometry.houndstoothArch,
+      position: [-30, 2, 30],
+    })
 
     addItem({
         name: 'houndstwist',
