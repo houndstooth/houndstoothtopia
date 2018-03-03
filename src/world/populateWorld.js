@@ -21,7 +21,7 @@ const populateWorld = async () => {
 
     addItem({
         name: 'main hall',
-        geometry: geometry.houndstrudeConvex,
+        geometry: geometry.ht3d_003_houndstrudeConvex,
         rotation: [0, -Math.PI / 4, 0],
         scale: [50, 50, 50],
         color: new Color(0x707066),
@@ -32,7 +32,7 @@ const populateWorld = async () => {
         const randomScale = Math.random() * 10
         addItem({
             name: 'cloud',
-            geometry: geometry.houndstrudeCompound,
+            geometry: geometry.ht3d_004_oundstrudeCompound,
             rotation: [Math.PI / 2, 0, Math.random() * Math.PI],
             color: new Color(0xffffff),
             position: [100 - Math.random() * 200, 175, 100 - Math.random() * 200],
@@ -47,7 +47,7 @@ const populateWorld = async () => {
             for (let k = 0; k < 2; k++) {
                 addItem({
                     name: 'greater houndsject tile',
-                    geometry: geometry.houndsjectGreater,
+                    geometry: geometry.ht3d_021_houndsjectGreater,
                     rotation: [-Math.PI / 2, 0, 0],
                     scale: [.25, .25, .25],
                     color: new Color(0x707066),
@@ -55,7 +55,7 @@ const populateWorld = async () => {
                 })
                 addItem({
                     name: 'greater houndsject tile',
-                    geometry: geometry.houndsjectGreater,
+                    geometry: geometry.ht3d_021_houndsjectGreater,
                     rotation: [-Math.PI / 2, 0, 0],
                     scale: [.25, .25, .25],
                     color: new Color(0x707066),
@@ -67,14 +67,14 @@ const populateWorld = async () => {
 
     addItem({
         name: 'torii',
-        geometry: geometry.houndsjectLesserWithInversion,
+        geometry: geometry.ht3d_023_houndsjectLesserWithInversion,
         position: [5, 3.5, 5],
         rotation: [0, -Math.PI / 2, 0]
     })
 
     addItem({
         name: 'lesser houndsject',
-        geometry: geometry.houndsjectLesser,
+        geometry: geometry.ht3d_022_houndsjectLesser,
         position: [0, 30, 0],
     })
 
@@ -82,20 +82,20 @@ const populateWorld = async () => {
 
     addItem({
         name: 'spherical houndstooth',
-        geometry: geometry.hosotooth,
+        geometry: geometry.ht3d_002_hosotooth,
         position: [-20, 2, -20],
     })
 
     // addItem({
     //   name: 'toroidal houndstooth',
-    //   geometry: geometry.houndstorus,
+    //   geometry: geometry.ht3d_024_houndstorus,
     //   rotation: [Math.PI, 0, 0],
     //   position: [30, 40, -20],
     // })
 
     addItem({
         name: 'cylindrical houndstooth',
-        geometry: geometry.houndslathe,
+        geometry: geometry.ht3d_007_houndslathe,
         rotation: [Math.PI, 0, 0],
         position: [20, 4, -20],
     })
@@ -104,7 +104,7 @@ const populateWorld = async () => {
 
     addItem({
         name: 'the original - dougstooth',
-        geometry: geometry.dougstooth,
+        geometry: geometry.ht3d_001_dougstooth,
         position: [-20, 3, 20],
     })
 
@@ -112,51 +112,39 @@ const populateWorld = async () => {
 
     addItem({
         name: 'greater houndstamp, extruded style',
-        geometry: geometry.houndstampGreaterExtruded,
+        geometry: geometry.ht3d_018_houndstampGreaterExtruded,
         position: [30, 3, 30],
     })
 
     addItem({
         name: 'lesser houndstamp',
-        geometry: geometry.houndstampLesser,
+        geometry: geometry.ht3d_020_houndstampLesser,
         position: [20, 3, 0],
-    })
-
-    addItem({
-        name: 'houndstamp - greater / vertooth - roots',
-        geometry: geometry.houndstampGreaterVertoothRoots,
-        position: [10, 10, 10],
-    })
-
-    addItem({
-        name: 'houndstamp - greater / vertooth - cusps',
-        geometry: geometry.houndstampGreaterVertoothCusps,
-        position: [-10, 10, -10],
     })
 
     // toroids
 
     addItem({
         name: 'houndstooth horn toroid - cusp to cusp',
-        geometry: geometry.houndstoothHornToroidCuspToCusp,
+        geometry: geometry.ht3d_009_houndstoothHornToroidCuspToCusp,
         position: [-10, 2, 0],
     })
 
     addItem({
         name: 'houndstooth horn toroid - root to root',
-        geometry: geometry.houndstoothHornToroidRootToRoot,
+        geometry: geometry.ht3d_008_houndstoothHornToroidRootToRoot,
         position: [-20, 2, 0],
     })
 
     addItem({
       name: 'houndstooth arch',
-      geometry: geometry.houndstoothArch,
+      geometry: geometry.ht3d_012_houndstoothArch,
       position: [-30, 2, 30],
     })
 
     addItem({
         name: 'houndstwist',
-        geometry: geometry.houndstwist,
+        geometry: geometry.ht3d_011_houndstwist,
         position: [-80, 10, -10],
     })
 
@@ -164,19 +152,19 @@ const populateWorld = async () => {
 
     addItem({
         name: 'houndstooth prism',
-        geometry: geometry.houndstoothPrism,
+        geometry: geometry.ht3d_027_houndstoothPrism,
         position: [-30, 2, 0],
     })
 
     addItem({
         name: 'composite of houndstooth prisms where they are oriented to converge onto a vertex',
-        geometry: geometry.houndstoothPrismComposite,
+        geometry: geometry.ht3d_028_houndstoothPrismComposite,
         position: [-40, 2, 0],
     })
 
     addItem({
         name: 'composite of houndstooth prisms where they are oriented in a swirl around a vertex',
-        geometry: geometry.houndstoothPrismCompositeWithSwirl,
+        geometry: geometry.ht3d_029_houndstoothPrismCompositeWithSwirl,
         position: [-50, 2, 0],
     })
 }
