@@ -167,6 +167,20 @@ const populateWorld = async () => {
         geometry: geometry.ht3d_029_houndstoothPrismCompositeWithSwirl,
         position: [-50, 2, 0],
     })
+
+    // octahedra
+
+    addItem({
+        name: 'octahedstooth with its homogenous faces roots',
+        geometry: geometry.ht3d_019_octahedstoothWithItsHomogenousFacesRoots,
+        position: [-30, 2, 40],
+    })
+
+    addItem({
+        name: 'octahedstooth with its homogenous faces cusps',
+        geometry: geometry.ht3d_037_octahedstoothWithItsHomogenousFacesCusps,
+        position: [-30, 2, 50],
+    })
 }
 
 export default populateWorld
