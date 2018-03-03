@@ -168,6 +168,18 @@ const populateWorld = async () => {
         position: [-50, 2, 0],
     })
 
+    addItem({
+        name: 'composite of houndstooth prisms where they are oriented to converge onto a vertex, reversed halves',
+        geometry: geometry.ht3d_030_houndstoothPrismCompositeAlignedHalves,
+        position: [-40, 2, -20],
+    })
+
+    addItem({
+        name: 'composite of houndstooth prisms where they are oriented in a swirl around a vertex, reversed halves',
+        geometry: geometry.ht3d_031_houndstoothPrismCompositeSwirledHalves,
+        position: [-50, 2, -20],
+    })
+
     // hedra
 
     addItem({
