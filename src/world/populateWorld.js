@@ -171,14 +171,14 @@ const populateWorld = async () => {
     // octahedra
 
     addItem({
-        name: 'octahedstooth with its homogenous faces roots',
-        geometry: geometry.ht3d_019_octahedstoothWithItsHomogenousFacesRoots,
+        name: 'octahedstooth with its homogeneous faces roots',
+        geometry: geometry.ht3d_019_octahedstoothWithItsHomogeneousFacesRoots,
         position: [-30, 2, 40],
     })
 
     addItem({
-        name: 'octahedstooth with its homogenous faces cusps',
-        geometry: geometry.ht3d_037_octahedstoothWithItsHomogenousFacesCusps,
+        name: 'octahedstooth with its homogeneous faces cusps',
+        geometry: geometry.ht3d_037_octahedstoothWithItsHomogeneousFacesCusps,
         position: [-30, 2, 50],
     })
 }
