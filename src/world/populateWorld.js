@@ -156,6 +156,12 @@ const populateWorld = async () => {
     })
 
     addItem({
+        name: 'houndstooth arch squared off',
+        geometry: geometry.ht3d_017_houndstoothArchToroidalPolyhedronVersion,
+        position: [-40, 2, 40],
+    })
+
+    addItem({
         name: 'houndstwist',
         geometry: geometry.ht3d_011_houndstwist,
         position: [-80, 10, -10],
