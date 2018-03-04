@@ -167,6 +167,18 @@ const populateWorld = async () => {
         position: [-80, 10, -10],
     })
 
+    addItem({
+        name: 'houndstooth horn toroid - root to root - squared off',
+        geometry: geometry.ht3d_013_houndstoothHornToroidalPolyhedronRootToRoot,
+        position: [-80, 10, -20],
+    })
+
+    addItem({
+        name: 'houndstooth horn toroid - cusp to cusp - squared off',
+        geometry: geometry.ht3d_014_houndstoothHornToroidalPolyhedronCuspToCusp,
+        position: [-80, 10, -30],
+    })
+
     // prism-based
 
     addItem({
