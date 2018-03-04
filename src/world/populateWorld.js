@@ -86,6 +86,12 @@ const populateWorld = async () => {
         position: [-20, 2, -20],
     })
 
+    addItem({
+        name: 'spherical houndstooth, octahedrified',
+        geometry: geometry.ht3d_016_hosotoothOctahedrified,
+        position: [-40, 2, -40],
+    })
+
     // addItem({
     //   name: 'toroidal houndstooth',
     //   geometry: geometry.ht3d_024_houndstorus,
