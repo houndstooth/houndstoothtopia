@@ -179,6 +179,12 @@ const populateWorld = async () => {
         position: [-80, 10, -30],
     })
 
+    addItem({
+        name: 'houndslathe exterior - squared off',
+        geometry: geometry.ht3d_015_houndslatheExteriorToroidalPolyhedronVersion,
+        position: [-80, 10, -40],
+    })
+
     // prism-based
 
     addItem({
