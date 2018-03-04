@@ -131,6 +131,13 @@ const populateWorld = async () => {
     })
 
     addItem({
+        name: 'cylindrical houndstooth - squared off',
+        geometry: geometry.ht3d_038_houndslatheInteriorToroidalPolyhedronVersion,
+        rotation: [Math.PI, 0, 0],
+        position: [20, 4, -40],
+    })
+
+    addItem({
         name: 'houndstooth horn toroid - cusp to cusp',
         geometry: geometry.ht3d_009_houndstoothHornToroidCuspToCusp,
         position: [-10, 2, 0],
