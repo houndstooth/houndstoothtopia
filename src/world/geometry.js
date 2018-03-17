@@ -7,7 +7,7 @@ const load = async () => {
         context.keys().map(path => {
             return new Promise(resolve => {
                 new OBJLoader().load(context(path), object => {
-                    const name = path.replace('./', '').replace('.obj', '')
+                    const name = path.replace('./', '').slice(0, 8)
                     geometry[name] = object.children[0].geometry
                     resolve()
                 })
