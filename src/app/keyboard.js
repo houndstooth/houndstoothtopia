@@ -1,7 +1,6 @@
 import direction from './direction'
 import player from './player'
 import {MOVEMENT_SPEED} from '../space'
-import vrControllers from './vrControllers'
 
 const keyboard = {
     update: () => {
@@ -62,8 +61,6 @@ const onKeyDown = event => {
         case 38: // up
             keyboard.turnUp = true
             break
-        case 32: // space
-            vrControllers.cycleMeshes()
     }
 }
 

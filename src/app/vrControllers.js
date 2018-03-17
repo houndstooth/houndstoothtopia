@@ -16,6 +16,7 @@ window.addEventListener('vr controller connected', event => {
 
     controller.addEventListener('primary press began', e => e.target.movementSpeed = MOVEMENT_SPEED)
     controller.addEventListener('primary press ended', e => e.target.movementSpeed = 0)
+    controller.addEventListener('thumbpad press began', vrControllers.cycleMeshes)
 })
 
 vrControllers.cycleMeshes = () => {
