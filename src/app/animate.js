@@ -6,11 +6,9 @@ import vrControllers from './vrControllers'
 import vrEffect from './vrEffect'
 import {currentCamera} from './cameras'
 import updateWorld from '../world/updateWorld'
-import updateSong from '../audio/updateSong'
 
 const animate = () => {
     updateWorld()
-    updateSong()
     player.update()
     if (vrEffect.isPresenting) {
         vrControls.update()
