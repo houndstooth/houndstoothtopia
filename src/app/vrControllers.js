@@ -3,10 +3,9 @@ import controllerMesh from '../world/controllerMesh'
 import player from './player'
 import vrControls from './vrControls'
 import {MOVEMENT_SPEED} from '../space'
-import {geometry} from '../world/geometry'
 
 vrControllers.controllers = []
-vrControllers.meshModelId = 0
+vrControllers.meshGeometryIndex = 0
 
 window.addEventListener('vr controller connected', event => {
     const controller = event.detail
@@ -20,11 +19,7 @@ window.addEventListener('vr controller connected', event => {
 })
 
 vrControllers.cycleMeshes = () => {
-    vrControllers.meshModelId++
-    if (vrControllers.meshModelId === Object.keys(geometry).length - 1) {
-        vrControllers.meshModelId = 0
-    }
-
+    vrControllers.meshGeometryIndex++
     vrControllers.controllers.forEach(updateControllerMesh)
 }
 
@@ -35,7 +30,7 @@ const updateControllerMesh = controller => {
         controller.mesh.material.dispose()
     }
 
-    const newMesh = controllerMesh(vrControllers.meshModelId)
+    const newMesh = controllerMesh(vrControllers.meshGeometryIndex)
     controller.add(newMesh)
     controller.mesh = newMesh
 }
