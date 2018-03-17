@@ -11,7 +11,7 @@ const populateWorld = async () => {
 
     addItem({
         name: 'ground',
-        geometry: new PlaneGeometry(1000, 1000),
+        geometry: new PlaneGeometry(1000, 1000, 100, 100),
         rotation: [-Math.PI / 2, 0, 0],
         position: [0, 0, 0],
         color: new Color(0x667066)
