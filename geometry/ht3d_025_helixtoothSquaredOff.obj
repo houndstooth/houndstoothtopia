@@ -1,12 +1,3 @@
-# Processed with obj-simplify dev | 2018-03-17T02:35:19Z | https://github.com/jonnenauha/obj-simplify
-
-# Blender v2.79 (sub 0) OBJ File: ''
-# www.blender.org
-
-mtllib helixtoothSquaredOff.mtl
-
-# vertices [70]
-
 v -3 8 1
 v -1 8 -1
 v 0 8 -1
@@ -77,9 +68,6 @@ v 0 -8 1
 v -1 -8 1
 v -1 -8 0
 v -2 -8 1
-
-# normals [57]
-
 vn -0.5774 -0.5774 0.5774
 vn 0 0.2425 -0.9701
 vn -1 0 0
@@ -137,13 +125,6 @@ vn -0.4851 0.7276 -0.4851
 vn -0.7071 0.7071 0
 vn 0.5774 0.5774 0.5774
 vn 0.8 0.6 0
-
-# objects [1]
-
-o houndstooth_flat.004
-usemtl None
-
-s off
 f 27//1 14//1 28//1
 f 26//2 13//2 27//2
 f 25//3 12//3 26//3
@@ -280,4 +261,3 @@ f 59//41 61//41 63//41
 f 64//41 65//41 67//41
 f 69//41 58//41 59//41
 f 63//41 67//41 69//41
-
