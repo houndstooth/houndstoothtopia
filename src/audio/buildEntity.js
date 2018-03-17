@@ -13,7 +13,7 @@ const buildEntity = ({notes, voices, noteIndex = 0, nextOnset = 0, nextOffset = 
   entity.update = time => {
     if (time > entity.nextOnset) {
       entity.voices[entity.notes[entity.noteIndex].pitch].gainNode.gain.value = BASE_GAIN
-      console.log('duration', entity.notes[entity.noteIndex].duration, 'index', entity.noteIndex)
+      // console.log('duration', entity.notes[entity.noteIndex].duration, 'index', entity.noteIndex)
       entity.nextOnset += entity.notes[entity.noteIndex].duration
     } else if (time > entity.nextOffset) {
       entity.voices[entity.notes[entity.noteIndex].pitch].gainNode.gain.value = 0
