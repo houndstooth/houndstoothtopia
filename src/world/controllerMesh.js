@@ -7,7 +7,7 @@ const CONTROLLER_ROTATION = [0, Math.PI / 4, 0]
 
 const controllerMesh = index => {
     const mesh = new Mesh(
-        geometry.byIndex[index % geometry.byIndex.length],
+        wrappedIndex(geometry.byIndex, index),
         new MeshLambertMaterial({color: CONTROLLER_COLOR}),
     )
     mesh.rotation.set(...CONTROLLER_ROTATION)
@@ -16,4 +16,18 @@ const controllerMesh = index => {
     return mesh
 }
 
+const wrappedIndex = (array, index) => {
+    let i
+    if (index < 0) {
+        i = array.length - Math.abs(index) % array.length
+        if (i === array.length) {
+            i = 0
+        }
+    }
+    else {
+        i = index % array.length
+    }
+
+    return array[ i ]
+}
 export default controllerMesh
