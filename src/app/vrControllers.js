@@ -2,7 +2,6 @@ import vrControllers from 'three-vrcontroller-module'
 import controllerMesh from '../world/controllerMesh'
 import player from './player'
 import vrControls from './vrControls'
-import {MOVEMENT_SPEED} from '../space'
 
 vrControllers.controllers = []
 vrControllers.meshGeometryIndex = 0
@@ -14,8 +13,6 @@ window.addEventListener('vr controller connected', event => {
     updateControllerMesh(controller)
     vrControllers.controllers.push(controller)
 
-    controller.addEventListener('primary press began', e => e.target.movementSpeed = MOVEMENT_SPEED)
-    controller.addEventListener('primary press ended', e => e.target.movementSpeed = 0)
     controller.addEventListener('thumbpad press began', vrControllers.cycleMeshes)
 })
 

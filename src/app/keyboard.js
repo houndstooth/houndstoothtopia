@@ -1,100 +1,68 @@
-import direction from './direction'
 import player from './player'
-import {MOVEMENT_SPEED} from '../space'
+import {MOVEMENT_SPEED, ROTATION_SPEED} from '../space'
+
+const KEYS = {
+    W: 87,
+    A: 65,
+    S: 83,
+    D: 68,
+    Q: 81,
+    E: 69,
+}
 
 const keyboard = {
     update: () => {
-        if (keyboard.moveForward) direction.translateZ(MOVEMENT_SPEED)
-        if (keyboard.moveBackward) direction.translateZ(-MOVEMENT_SPEED)
-        if (keyboard.moveUp) direction.translateY(MOVEMENT_SPEED)
-        if (keyboard.moveDown) direction.translateY(-MOVEMENT_SPEED)
-        if (keyboard.moveLeft) direction.translateX(MOVEMENT_SPEED)
-        if (keyboard.moveRight) direction.translateX(-MOVEMENT_SPEED)
-        if (keyboard.turnRight) {
-            player.rotateY(-MOVEMENT_SPEED)
-            direction.rotateY(-MOVEMENT_SPEED)
-        }
-        if (keyboard.turnLeft) {
-            player.rotateY(MOVEMENT_SPEED)
-            direction.rotateY(MOVEMENT_SPEED)
-        }
-        if (keyboard.turnUp) {
-            player.rotateX(-MOVEMENT_SPEED)
-            direction.rotateX(-MOVEMENT_SPEED)
-        }
-        if (keyboard.turnDown) {
-            player.rotateX(MOVEMENT_SPEED)
-            direction.rotateX(MOVEMENT_SPEED)
-        }
+        if (keyboard.moveForward) player.translateX(MOVEMENT_SPEED)
+        if (keyboard.moveBackward) player.translateX(-MOVEMENT_SPEED)
+        if (keyboard.moveRight) player.translateZ(MOVEMENT_SPEED)
+        if (keyboard.moveLeft) player.translateZ(-MOVEMENT_SPEED)
+        if (keyboard.turnRight) player.rotateY(-ROTATION_SPEED)
+        if (keyboard.turnLeft) player.rotateY(ROTATION_SPEED)
     }
 }
 
 const onKeyDown = event => {
     switch (event.keyCode) {
-        case 87: // w
+        case KEYS.W:
             keyboard.moveForward = true
             break
-        case 65: // a
+        case KEYS.A:
             keyboard.moveLeft = true
             break
-        case 83: // s
+        case KEYS.S:
             keyboard.moveBackward = true
             break
-        case 68: // d
+        case KEYS.D:
             keyboard.moveRight = true
             break
-        case 82: // r
-            keyboard.moveUp = true
-            break
-        case 70: // f
-            keyboard.moveDown = true
-            break
-        case 37: // left
+        case KEYS.Q:
             keyboard.turnLeft = true
             break
-        case 39: // right
+        case KEYS.E:
             keyboard.turnRight = true
-            break
-        case 40: // down
-            keyboard.turnDown = true
-            break
-        case 38: // up
-            keyboard.turnUp = true
             break
     }
 }
 
 const onKeyUp = event => {
     switch (event.keyCode) {
-        case 87: // w
+        case KEYS.W:
             keyboard.moveForward = false
             break
-        case 65: // a
+        case KEYS.A:
             keyboard.moveLeft = false
             break
-        case 83: // s
+        case KEYS.S:
             keyboard.moveBackward = false
             break
-        case 68: // d
+        case KEYS.D:
             keyboard.moveRight = false
             break
-        case 82: // r
-            keyboard.moveUp = false
-            break
-        case 70: // f
-            keyboard.moveDown = false
-            break
-        case 37: // left
+        case KEYS.Q:
             keyboard.turnLeft = false
             break
-        case 39: // right
+        case KEYS.E:
             keyboard.turnRight = false
-            break
-        case 40: // down
-            keyboard.turnDown = false
-            break
-        case 38: // up
-            keyboard.turnUp = false
             break
     }
 }
