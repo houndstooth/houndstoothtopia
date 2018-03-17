@@ -20,8 +20,8 @@ const populateWorld = async () => {
     // houndstrudes
 
     addItem({
-        name: 'main hall - houndstrude convex',
-        geometry: geometry.ht3d_003,
+        name: 'main hall',
+        geometry: geometry.ht3d_003_houndstrudeConvex,
         rotation: [0, -Math.PI / 4, 0],
         scale: [50, 50, 50],
         color: new Color(0x707066),
@@ -31,8 +31,8 @@ const populateWorld = async () => {
     for (let i = 0; i < 10; i++) {
         const randomScale = Math.random() * 10
         addItem({
-            name: 'cloud, houndstrude compound',
-            geometry: geometry.ht3d_004,
+            name: 'cloud',
+            geometry: geometry.ht3d_004_oundstrudeCompound,
             rotation: [Math.PI / 2, 0, Math.random() * Math.PI],
             color: new Color(0xffffff),
             position: [100 - Math.random() * 200, 175, 100 - Math.random() * 200],
@@ -47,7 +47,7 @@ const populateWorld = async () => {
             for (let k = 0; k < 2; k++) {
                 addItem({
                     name: 'greater houndsject tile',
-                    geometry: geometry.ht3d_021,
+                    geometry: geometry.ht3d_021_houndsjectGreater,
                     rotation: [-Math.PI / 2, 0, 0],
                     scale: [.25, .25, .25],
                     color: new Color(0x707066),
@@ -55,7 +55,7 @@ const populateWorld = async () => {
                 })
                 addItem({
                     name: 'greater houndsject tile',
-                    geometry: geometry.ht3d_021,
+                    geometry: geometry.ht3d_021_houndsjectGreater,
                     rotation: [-Math.PI / 2, 0, 0],
                     scale: [.25, .25, .25],
                     color: new Color(0x707066),
@@ -66,15 +66,15 @@ const populateWorld = async () => {
     }
 
     addItem({
-        name: 'torii - lesser houndsject with inversion',
-        geometry: geometry.ht3d_023,
+        name: 'torii',
+        geometry: geometry.ht3d_023_houndsjectLesserWithInversion,
         position: [5, 3.5, 5],
         rotation: [0, -Math.PI / 2, 0]
     })
 
     addItem({
         name: 'lesser houndsject',
-        geometry: geometry.ht3d_022,
+        geometry: geometry.ht3d_022_houndsjectLesser,
         position: [0, 30, 0],
     })
 
@@ -82,19 +82,19 @@ const populateWorld = async () => {
 
     addItem({
         name: 'spherical houndstooth',
-        geometry: geometry.ht3d_002,
+        geometry: geometry.ht3d_002_hosotooth,
         position: [-20, 2, -20],
     })
 
     addItem({
         name: 'spherical houndstooth, octahedrified',
-        geometry: geometry.ht3d_016,
+        geometry: geometry.ht3d_016_hosotoothOctahedrified,
         position: [-40, 2, -40],
     })
 
     // addItem({
     //   name: 'toroidal houndstooth',
-    //   geometry: geometry.ht3d_024,
+    //   geometry: geometry.ht3d_024_houndstorus,
     //   rotation: [Math.PI, 0, 0],
     //   position: [30, 40, -20],
     // })
@@ -103,7 +103,7 @@ const populateWorld = async () => {
 
     addItem({
         name: 'the original - dougstooth',
-        geometry: geometry.ht3d_001,
+        geometry: geometry.ht3d_001_dougstooth,
         position: [-20, 3, 20],
     })
 
@@ -111,13 +111,13 @@ const populateWorld = async () => {
 
     addItem({
         name: 'greater houndstamp, extruded style',
-        geometry: geometry.ht3d_018,
+        geometry: geometry.ht3d_018_houndstampGreaterExtruded,
         position: [30, 3, 30],
     })
 
     addItem({
         name: 'lesser houndstamp',
-        geometry: geometry.ht3d_020,
+        geometry: geometry.ht3d_020_houndstampLesser,
         position: [20, 3, 0],
     })
 
@@ -125,69 +125,69 @@ const populateWorld = async () => {
 
     addItem({
         name: 'cylindrical houndstooth',
-        geometry: geometry.ht3d_007,
+        geometry: geometry.ht3d_007_houndslatheInterior,
         rotation: [Math.PI, 0, 0],
         position: [20, 4, -20],
     })
 
     addItem({
         name: 'double cylindrical houndstooth',
-        geometry: geometry.ht3d_010,
+        geometry: geometry.ht3d_010_houndslatheExterior,
         position: [20, 4, -30],
     })
 
     addItem({
         name: 'cylindrical houndstooth - squared off',
-        geometry: geometry.ht3d_038,
+        geometry: geometry.ht3d_038_houndslatheInteriorToroidalPolyhedronVersion,
         rotation: [Math.PI, 0, 0],
         position: [20, 4, -40],
     })
 
     addItem({
         name: 'houndstooth horn toroid - cusp to cusp',
-        geometry: geometry.ht3d_009,
+        geometry: geometry.ht3d_009_houndstoothHornToroidCuspToCusp,
         position: [-10, 2, 0],
     })
 
     addItem({
         name: 'houndstooth horn toroid - root to root',
-        geometry: geometry.ht3d_008,
+        geometry: geometry.ht3d_008_houndstoothHornToroidRootToRoot,
         position: [-20, 2, 0],
     })
 
     addItem({
       name: 'houndstooth arch',
-      geometry: geometry.ht3d_012,
+      geometry: geometry.ht3d_012_houndstoothArch,
       position: [-30, 2, 30],
     })
 
     addItem({
         name: 'houndstooth arch squared off',
-        geometry: geometry.ht3d_017,
+        geometry: geometry.ht3d_017_houndstoothArchToroidalPolyhedronVersion,
         position: [-40, 2, 40],
     })
 
     addItem({
         name: 'houndstwist',
-        geometry: geometry.ht3d_011,
+        geometry: geometry.ht3d_011_houndstwist,
         position: [-80, 10, -10],
     })
 
     addItem({
         name: 'houndstooth horn toroid - root to root - squared off',
-        geometry: geometry.ht3d_013,
+        geometry: geometry.ht3d_013_houndstoothHornToroidalPolyhedronRootToRoot,
         position: [-80, 10, -20],
     })
 
     addItem({
         name: 'houndstooth horn toroid - cusp to cusp - squared off',
-        geometry: geometry.ht3d_014,
+        geometry: geometry.ht3d_014_houndstoothHornToroidalPolyhedronCuspToCusp,
         position: [-80, 10, -30],
     })
 
     addItem({
         name: 'houndslathe exterior - squared off',
-        geometry: geometry.ht3d_015,
+        geometry: geometry.ht3d_015_houndslatheExteriorToroidalPolyhedronVersion,
         position: [-80, 10, -40],
     })
 
@@ -195,31 +195,31 @@ const populateWorld = async () => {
 
     addItem({
         name: 'houndstooth prism',
-        geometry: geometry.ht3d_027,
+        geometry: geometry.ht3d_027_houndstoothPrism,
         position: [-30, 2, 0],
     })
 
     addItem({
         name: 'composite of houndstooth prisms where they are oriented to converge onto a vertex',
-        geometry: geometry.ht3d_028,
+        geometry: geometry.ht3d_028_houndstoothPrismComposite,
         position: [-40, 2, 0],
     })
 
     addItem({
         name: 'composite of houndstooth prisms where they are oriented in a swirl around a vertex',
-        geometry: geometry.ht3d_029,
+        geometry: geometry.ht3d_029_houndstoothPrismCompositeWithSwirl,
         position: [-50, 2, 0],
     })
 
     addItem({
         name: 'composite of houndstooth prisms where they are oriented to converge onto a vertex, reversed halves',
-        geometry: geometry.ht3d_030,
+        geometry: geometry.ht3d_030_houndstoothPrismCompositeAlignedHalves,
         position: [-40, 2, -20],
     })
 
     addItem({
         name: 'composite of houndstooth prisms where they are oriented in a swirl around a vertex, reversed halves',
-        geometry: geometry.ht3d_031,
+        geometry: geometry.ht3d_031_houndstoothPrismCompositeSwirledHalves,
         position: [-50, 2, -20],
     })
 
@@ -227,19 +227,19 @@ const populateWorld = async () => {
 
     addItem({
         name: 'octahedstooth with its homogeneous faces roots',
-        geometry: geometry.ht3d_019,
+        geometry: geometry.ht3d_019_octahedstoothWithItsHomogeneousFacesRoots,
         position: [-30, 2, 40],
     })
 
     addItem({
         name: 'octahedstooth with its homogeneous faces cusps',
-        geometry: geometry.ht3d_037,
+        geometry: geometry.ht3d_037_octahedstoothWithItsHomogeneousFacesCusps,
         position: [-30, 2, 50],
     })
 
     addItem({
         name: 'rhombic dodecahedstooth',
-        geometry: geometry.ht3d_032,
+        geometry: geometry.ht3d_032_rhombicDodecahedstooth,
         position: [-30, 2, 60],
     })
 }
