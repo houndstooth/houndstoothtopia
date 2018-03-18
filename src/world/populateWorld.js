@@ -1,5 +1,6 @@
 import {Color, PlaneGeometry} from 'threejs-full-es6'
 import {geometry} from './geometry'
+import {texture} from './texture'
 import setupAtmosphere from './setupAtmosphere'
 import setupVantage from './setupVantage'
 import addItem from './addItem'
@@ -8,6 +9,49 @@ const populateWorld = async () => {
     setupAtmosphere()
     setupVantage()
     await geometry.load()
+    await texture.load()
+
+    // planes
+
+    addItem({
+        name: 'dazzle',
+        geometry: new PlaneGeometry(1, 1),
+        rotation: [0, -Math.PI / 2, 0],
+        position: [5, 1, -5],
+        texture: texture.morphy,
+    })
+
+    addItem({
+        name: 'cmyk',
+        geometry: new PlaneGeometry(1, 1),
+        rotation: [0, -Math.PI / 2, 0],
+        position: [5, 1, -7],
+        texture: texture.cmyk,
+    })
+
+    addItem({
+        name: 'gcc',
+        geometry: new PlaneGeometry(1, 1),
+        rotation: [0, -Math.PI / 2, 0],
+        position: [5, 1, -9],
+        texture: texture.gcc,
+    })
+
+    addItem({
+        name: 'gongram',
+        geometry: new PlaneGeometry(1, 1),
+        rotation: [0, -Math.PI / 2, 0],
+        position: [5, 1, -11],
+        texture: texture.gongram,
+    })
+
+    addItem({
+        name: 'morphy',
+        geometry: new PlaneGeometry(1, 1),
+        rotation: [0, -Math.PI / 2, 0],
+        position: [5, 1, -13],
+        texture: texture.morphy,
+    })
 
     addItem({
         name: 'ground',
