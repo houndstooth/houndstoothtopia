@@ -1,4 +1,5 @@
 import player from './player'
+import elevation from './elevation'
 import renderer from './renderer'
 import scene from './scene'
 import vrControls from './vrControls'
@@ -10,6 +11,7 @@ import updateWorld from '../world/updateWorld'
 const animate = () => {
     updateWorld()
     player.update()
+    elevation.update()
     if (vrEffect.isPresenting) {
         vrControls.update()
         vrControllers.update()

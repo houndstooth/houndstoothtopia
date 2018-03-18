@@ -1,5 +1,6 @@
 import player from './player'
 import {MOVEMENT_SPEED, ROTATION_SPEED} from '../space'
+import elevation from './elevation'
 
 const KEYS = {
     W: 87,
@@ -8,6 +9,8 @@ const KEYS = {
     D: 68,
     Q: 81,
     E: 69,
+    R: 82,
+    F: 70,
 }
 
 const keyboard = {
@@ -40,6 +43,12 @@ const onKeyDown = event => {
             break
         case KEYS.E:
             keyboard.turnRight = true
+            break
+        case KEYS.R:
+            elevation.change(1)
+            break
+        case KEYS.F:
+            elevation.change(-1)
             break
     }
 }
