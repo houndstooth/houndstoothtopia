@@ -3,11 +3,14 @@ import {geometry} from './geometry'
 import setupAtmosphere from './setupAtmosphere'
 import setupVantage from './setupVantage'
 import addItem from './addItem'
+import addSpeaker from '../audio/addSpeaker'
 
 const populateWorld = async () => {
     setupAtmosphere()
     setupVantage()
     await geometry.load()
+
+    addSpeaker()
 
     addItem({
         name: 'ground',
@@ -32,7 +35,7 @@ const populateWorld = async () => {
         const randomScale = Math.random() * 10
         addItem({
             name: 'cloud',
-            geometry: geometry.ht3d_004_oundstrudeCompound,
+            geometry: geometry.ht3d_004_houndstrudeCompound,
             rotation: [Math.PI / 2, 0, Math.random() * Math.PI],
             color: new Color(0xffffff),
             position: [100 - Math.random() * 200, 175, 100 - Math.random() * 200],

@@ -11,4 +11,3 @@ prepareViewer()
 requestAnimationFrame()
 
 setTimeout(songLoop, 1000)
-
