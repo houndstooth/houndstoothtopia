@@ -16,8 +16,8 @@ const addItem = ({
     mesh.position.set(...position)
     mesh.rotation.set(...rotation)
     mesh.scale.set(...scale)
-    mesh.castShadow = true
-    mesh.receiveShadow = true
+    // mesh.castShadow = true
+    // mesh.receiveShadow = true
     scene.add(mesh)
 
     if (!items[name]) items[name] = []

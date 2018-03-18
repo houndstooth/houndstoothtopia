@@ -21,7 +21,7 @@ const populateWorld = async () => {
 
     addItem({
         name: 'main hall',
-        geometry: geometry.ht3d_003_houndstrudeConvex,
+        geometry: geometry.mainHall,
         rotation: [0, -Math.PI / 4, 0],
         scale: [50, 50, 50],
         color: new Color(0x707066),
