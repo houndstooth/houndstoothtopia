@@ -1,19 +1,23 @@
-import context from './context'
+import {PositionalAudio} from 'threejs-full-es6'
+import listener from './listener'
 
 const buildVoice = pitch => {
-    const newVoice = {
-        oscNode: context.createOscillator(),
-        gainNode: context.createGain(),
-    }
+    const positionalSound = new PositionalAudio(listener)
+    positionalSound.setVolume(0)
+    positionalSound.setRolloffFactor(2)
+    positionalSound.setDistanceModel('exponential')
+    positionalSound.getOutput().panningModel = "HRTF"
 
-    newVoice.oscNode.connect(newVoice.gainNode)
-    newVoice.gainNode.connect(context.destination)
-    newVoice.oscNode.type = 'sine'
-    newVoice.oscNode.frequency.value = pitch
-    newVoice.gainNode.gain.value = 0
-    newVoice.oscNode.start()
+    const gainNode = positionalSound.getOutput()
 
-    return newVoice
+    const oscillator = listener.context.createOscillator()
+    oscillator.connect(gainNode)
+    oscillator.type = 'sine'
+    oscillator.frequency.value = pitch
+    oscillator.start(3)
+    positionalSound.setNodeSource(oscillator)
+
+    return positionalSound
 }
 
 export default buildVoice

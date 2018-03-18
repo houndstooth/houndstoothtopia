@@ -3,14 +3,11 @@ import {geometry} from './geometry'
 import setupAtmosphere from './setupAtmosphere'
 import setupVantage from './setupVantage'
 import addItem from './addItem'
-import addSpeaker from '../audio/addSpeaker'
 
 const populateWorld = async () => {
     setupAtmosphere()
     setupVantage()
     await geometry.load()
-
-    addSpeaker()
 
     addItem({
         name: 'ground',
