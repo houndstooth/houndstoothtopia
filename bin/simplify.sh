@@ -1,5 +1,8 @@
 #!/usr/bin/env sh
 
-echo ${ID}
-
-obj-simplify -in "./geometry/ht3d_"${ID}*
+for file in ./geometry/*
+do
+  obj-simplify -in "$file"
+  rm "$file"
+  mv ${file%.obj}.simplified.obj "$file"
+done
