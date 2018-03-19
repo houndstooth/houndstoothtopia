@@ -4,5 +4,6 @@ node_modules/
 *.log*
 .idea/
 dist/*.obj
+dist/*.png
 dist/bundle.js
 performance/*.tsv
