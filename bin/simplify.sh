@@ -5,8 +5,13 @@ rm ./geometry/*.mtl
 for file in ./geometry/*
 do
   sed -i 's/\.00000[123]//' "$file"
+
   sed -i 's/\.50000[123]/.5/' "$file"
   sed -i 's/\.49999[789]/.5/' "$file"
+
+  sed -i 's/\.33333[1245]/.333333/' "$file"
+  sed -i 's/\.66666[5689]/.666667/' "$file"
+
   sed -i 's/0\.99999[789]/1/' "$file"
   sed -i 's/1\.99999[789]/2/' "$file"
   sed -i 's/2\.99999[789]/3/' "$file"
