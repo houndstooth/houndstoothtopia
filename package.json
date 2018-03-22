@@ -4,7 +4,7 @@
   "scripts": {
     "start": "sh ./bin/cross_env_pre_source.sh webpack-dev-server",
     "deploy": "sh ./bin/cross_env_pre_source.sh 'sh ./bin/deploy.sh'",
-    "simplify": "sh ./bin/cross_env_pre_source.sh 'sh ./bin/simplify.sh'",
+    "simplify": "sh ./bin/cross_env_pre_source.sh 'node ./bin/simplify.js'",
     "performance": "sh ./bin/cross_env_pre_source.sh 'sh ./bin/performance.sh'",
     "performance-base": "sh ./bin/cross_env_pre_source.sh 'sh ./bin/performanceBase.sh'",
     "kill": "sh ./bin/kill_process_by_port.sh",
