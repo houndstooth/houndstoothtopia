@@ -18,7 +18,7 @@ const populateWorld = async () => {
         geometry: new PlaneGeometry(1, 1),
         rotation: [0, -Math.PI / 2, 0],
         position: [5, 1, -5],
-        texture: texture.morphy,
+        texture: texture.ht2d_010_houndazzle,
     })
 
     addItem({
@@ -26,7 +26,7 @@ const populateWorld = async () => {
         geometry: new PlaneGeometry(1, 1),
         rotation: [0, -Math.PI / 2, 0],
         position: [5, 1, -7],
-        texture: texture.cmyk,
+        texture: texture.ht2d_007_cmyktooth,
     })
 
     addItem({
@@ -34,7 +34,7 @@ const populateWorld = async () => {
         geometry: new PlaneGeometry(1, 1),
         rotation: [0, -Math.PI / 2, 0],
         position: [5, 1, -9],
-        texture: texture.gcc,
+        texture: texture.ht2d_002_gingham_chevron_continuum,
     })
 
     addItem({
@@ -42,7 +42,7 @@ const populateWorld = async () => {
         geometry: new PlaneGeometry(1, 1),
         rotation: [0, -Math.PI / 2, 0],
         position: [5, 1, -11],
-        texture: texture.gongram,
+        texture: texture.ht2d_004_gongram,
     })
 
     addItem({
@@ -50,7 +50,7 @@ const populateWorld = async () => {
         geometry: new PlaneGeometry(1, 1),
         rotation: [0, -Math.PI / 2, 0],
         position: [5, 1, -13],
-        texture: texture.morphy,
+        texture: texture.ht2d_009_houndsmorphosis,
     })
 
     addItem({
