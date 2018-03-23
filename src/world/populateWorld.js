@@ -9,6 +9,8 @@ const populateWorld = async () => {
     setupAtmosphere()
     setupVantage()
 
+    await texture.load()
+
     // planes
 
     addItem({
@@ -17,6 +19,14 @@ const populateWorld = async () => {
         rotation: [-Math.PI / 2, 0, 0],
         position: [0, 0, 0],
         color: new Color(0x667066)
+    })
+
+    addItem({
+        name: 'controls',
+        geometry: new PlaneGeometry(1, 1),
+        rotation: [0, -Math.PI / 2, 0],
+        position: [1, 2, 0],
+        texture: texture.controls,
     })
 
     addItem({
@@ -60,7 +70,6 @@ const populateWorld = async () => {
     })
 
     await geometry.load()
-    await texture.load()
 
     // houndstrudes
 
@@ -96,7 +105,7 @@ const populateWorld = async () => {
                     rotation: [-Math.PI / 2, 0, 0],
                     scale: [.25, .25, .25],
                     color: new Color(0x707066),
-                    position: [i, j + 1, k],
+                    position: [i + 2, j + 1, k],
                 })
                 addItem({
                     name: 'greater houndsject tile',
@@ -104,7 +113,7 @@ const populateWorld = async () => {
                     rotation: [-Math.PI / 2, 0, 0],
                     scale: [.25, .25, .25],
                     color: new Color(0x707066),
-                    position: [i + .5, j + 1 + .5, k + .5],
+                    position: [i + 2 + .5, j + 1 + .5, k + .5],
                 })
             }
         }
