@@ -8,10 +8,16 @@ import addItem from './addItem'
 const populateWorld = async () => {
     setupAtmosphere()
     setupVantage()
-    await geometry.load()
-    await texture.load()
 
     // planes
+
+    addItem({
+        name: 'ground',
+        geometry: new PlaneGeometry(1000, 1000),
+        rotation: [-Math.PI / 2, 0, 0],
+        position: [0, 0, 0],
+        color: new Color(0x667066)
+    })
 
     addItem({
         name: 'dazzle',
@@ -53,13 +59,8 @@ const populateWorld = async () => {
         texture: texture.ht2d_009_houndsmorphosis,
     })
 
-    addItem({
-        name: 'ground',
-        geometry: new PlaneGeometry(1000, 1000, 100, 100),
-        rotation: [-Math.PI / 2, 0, 0],
-        position: [0, 0, 0],
-        color: new Color(0x667066)
-    })
+    await geometry.load()
+    await texture.load()
 
     // houndstrudes
 
