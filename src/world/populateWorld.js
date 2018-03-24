@@ -4,6 +4,7 @@ import {texture} from './texture'
 import setupAtmosphere from './setupAtmosphere'
 import setupVantage from './setupVantage'
 import addItem from './addItem'
+import * as courtyardIntersections from './courtyardIntersections'
 
 const populateWorld = async () => {
     setupAtmosphere()
@@ -13,13 +14,14 @@ const populateWorld = async () => {
 
     // planes
 
-    addItem({
-        name: 'ground',
-        geometry: new PlaneGeometry(1000, 1000),
-        rotation: [-Math.PI / 2, 0, 0],
-        position: [0, 0, 0],
-        color: new Color(0x667066)
-    })
+    // addItem({
+    //     name: 'ground',
+    //     geometry: new PlaneGeometry(1000, 1000),
+    //     rotation: [-Math.PI / 2, 0, 0],
+    //     position: [0, 0, 0],
+    //     color: new Color(0x667066)
+    // })
+
 
     addItem({
         name: 'controls',
@@ -74,12 +76,57 @@ const populateWorld = async () => {
     // houndstrudes
 
     addItem({
+        name: 'ground, with cliffs now',
+        geometry: geometry.ht3d_055_houndstrudeOutwardConvex,
+        scale: [500, 500, 500],
+        color: new Color(0x707066),
+    })
+
+    addItem({
+        name: 'courtyard',
+        geometry: geometry.courtyard,
+        scale: [500,500,500],
+        color: new Color(0x667066),
+        position: [0,.1,0]
+    })
+
+    addItem({
         name: 'main hall',
         geometry: geometry.mainHall,
         rotation: [0, -Math.PI / 4, 0],
         scale: [50, 50, 50],
         color: new Color(0x707066),
-        position: [150, 0, -50],
+        position: [0, 0, 0],
+    })
+
+    // courtyardIntersections.getPosition(1)
+    //
+    addItem({
+        name: 'swirl houndstamp',
+        geometry: geometry.ht3d_054_houndstampGreaterExtrudedWithSwirl,
+        position: courtyardIntersections.getPosition(42),
+        color: new Color(0xff0000),
+    })
+    //
+    // addItem({
+    //     name: 'swirl houndstamp',
+    //     geometry: geometry.ht3d_054_houndstampGreaterExtrudedWithSwirl,
+    //     position: courtyardIntersections.getPosition(1),
+    //     color: new Color(0xff0000),
+    // })
+
+    addItem({
+        name: 'swirl houndstamp',
+        geometry: geometry.ht3d_054_houndstampGreaterExtrudedWithSwirl,
+        position: courtyardIntersections.getPosition(7),
+        color: new Color(0xff0000),
+    })
+
+    addItem({
+        name: 'swirl houndstamp',
+        geometry: geometry.ht3d_054_houndstampGreaterExtrudedWithSwirl,
+        position: courtyardIntersections.getPosition(3),
+        color: new Color(0xff0000),
     })
 
     for (let i = 0; i < 10; i++) {
@@ -210,9 +257,9 @@ const populateWorld = async () => {
     })
 
     addItem({
-      name: 'houndstooth arch',
-      geometry: geometry.ht3d_012_houndstoothArch,
-      position: [-30, 2, 30],
+        name: 'houndstooth arch',
+        geometry: geometry.ht3d_012_houndstoothArch,
+        position: [-30, 2, 30],
     })
 
     addItem({
