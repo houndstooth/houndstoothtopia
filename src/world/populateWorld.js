@@ -14,15 +14,6 @@ const populateWorld = async () => {
 
     // planes
 
-    // addItem({
-    //     name: 'ground',
-    //     geometry: new PlaneGeometry(1000, 1000),
-    //     rotation: [-Math.PI / 2, 0, 0],
-    //     position: [0, 0, 0],
-    //     color: new Color(0x667066)
-    // })
-
-
     addItem({
         name: 'controls',
         geometry: new PlaneGeometry(1, 1),
@@ -73,22 +64,31 @@ const populateWorld = async () => {
 
     await geometry.load()
 
-    // houndstrudes
+    // the grounds
 
     addItem({
         name: 'ground, with cliffs now',
         geometry: geometry.ht3d_055_houndstrudeOutwardConvex,
-        scale: [500, 500, 500],
+        scale: [666, 666, 666],
         color: new Color(0x707066),
     })
 
     addItem({
         name: 'courtyard',
         geometry: geometry.courtyard,
-        scale: [500,500,500],
+        scale: [666, 666, 666],
         color: new Color(0x667066),
-        position: [0,.1,0]
+        position: [0, .1, 0]
     })
+
+    for (let i = 1; i <= 75; i++) {
+        addItem({
+            name: 'plinths',
+            geometry: geometry.ht3d_027_houndstoothPrism,
+            position: courtyardIntersections.getPosition(i),
+            color: new Color(0x999999),
+        })
+    }
 
     addItem({
         name: 'main hall',
@@ -99,35 +99,7 @@ const populateWorld = async () => {
         position: [0, 0, 0],
     })
 
-    // courtyardIntersections.getPosition(1)
-    //
-    addItem({
-        name: 'swirl houndstamp',
-        geometry: geometry.ht3d_054_houndstampGreaterExtrudedWithSwirl,
-        position: courtyardIntersections.getPosition(42),
-        color: new Color(0xff0000),
-    })
-    //
-    // addItem({
-    //     name: 'swirl houndstamp',
-    //     geometry: geometry.ht3d_054_houndstampGreaterExtrudedWithSwirl,
-    //     position: courtyardIntersections.getPosition(1),
-    //     color: new Color(0xff0000),
-    // })
-
-    addItem({
-        name: 'swirl houndstamp',
-        geometry: geometry.ht3d_054_houndstampGreaterExtrudedWithSwirl,
-        position: courtyardIntersections.getPosition(7),
-        color: new Color(0xff0000),
-    })
-
-    addItem({
-        name: 'swirl houndstamp',
-        geometry: geometry.ht3d_054_houndstampGreaterExtrudedWithSwirl,
-        position: courtyardIntersections.getPosition(3),
-        color: new Color(0xff0000),
-    })
+    // houndstrudes
 
     for (let i = 0; i < 10; i++) {
         const randomScale = Math.random() * 10
@@ -192,13 +164,6 @@ const populateWorld = async () => {
         geometry: geometry.ht3d_016_hosotoothOctahedrified,
         position: [-40, 2, -40],
     })
-
-    // addItem({
-    //   name: 'toroidal houndstooth',
-    //   geometry: geometry.ht3d_024_houndstorus,
-    //   rotation: [Math.PI, 0, 0],
-    //   position: [30, 40, -20],
-    // })
 
     // OG
 
