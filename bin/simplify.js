@@ -27,7 +27,11 @@ fs.readdir('./geometry', (err, infiles) => {
                     shell: true
                 })
                 fs.unlinkSync(outfile)
-                cp.execSync(`sed -i '/^[#lmosu].*$/d' ${infile}`, {stdio: 'inherit', stderr: 'inherit', shell: true})
+                cp.execSync(`sed -i '' -e '/^[#lmosu].*$/d' ${infile}`, {
+                    stdio: 'inherit',
+                    stderr: 'inherit',
+                    shell: true
+                })
                 fs.readFile(infile, 'utf8', (err, data) => {
                     const linesExceptFirst = data.split('\n').filter(line => line !== '').join('\n');
                     fs.writeFile(infile, linesExceptFirst, noop);
