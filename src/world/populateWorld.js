@@ -102,13 +102,13 @@ const populateWorld = async () => {
     // houndstrudes
 
     for (let i = 0; i < 10; i++) {
-        const randomScale = Math.random() * 10
+        const randomScale = (1 + Math.random()) * 50
         addItem({
             name: 'cloud',
             geometry: geometry.ht3d_004_houndstrudeCompound,
-            rotation: [Math.PI / 2, 0, Math.random() * Math.PI],
+            rotation: [0, 0, 0],
             color: new Color(0xffffff),
-            position: [100 - Math.random() * 200, 175, 100 - Math.random() * 200],
+            position: [1200 - Math.random() * 2400, 375, 1200 - Math.random() * 2400],
             scale: [randomScale, randomScale, randomScale],
         })
     }
