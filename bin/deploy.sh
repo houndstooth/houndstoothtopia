@@ -1,7 +1,5 @@
 #!/usr/bin/env sh
 
-set -e
-
 cf a > /dev/null
 if [[ $? == 1 ]] ; then
 
