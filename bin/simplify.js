@@ -2,6 +2,9 @@ const fs = require('fs')
 const readline = require('readline')
 const process = require('process')
 const cp = require('child_process')
+const os = require('os')
+
+const macSedTweak = os.platform() === 'win32' ? '' : "'' -e "
 
 fs.readdir('./geometry', (err, infiles) => {
     infiles.forEach(name => {
@@ -27,7 +30,7 @@ fs.readdir('./geometry', (err, infiles) => {
                     shell: true
                 })
                 fs.unlinkSync(outfile)
-                cp.execSync(`sed -i '' -e '/^[#lmosu].*$/d' ${infile}`, {
+                cp.execSync(`sed -i ${macSedTweak}'/^[#lmosu].*$/d' ${infile}`, {
                     stdio: 'inherit',
                     stderr: 'inherit',
                     shell: true
