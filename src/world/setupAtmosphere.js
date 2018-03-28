@@ -10,7 +10,7 @@ import {
     HEMISPHERE_LIGHT_INTENSITY,
     HEMISPHERE_LIGHT_SKY_COLOR
 } from '../color'
-import {DIRECTIONAL_LIGHT_POSITION, FOG_FAR, FOG_NEAR} from '../space'
+import {DIRECTIONAL_LIGHT_POSITION, FOG_FAR, FOG_NEAR} from '../spacetime'
 
 const setupAtmosphere = () => {
     const directionalLight = new DirectionalLight(DIRECTIONAL_LIGHT_COLOR)

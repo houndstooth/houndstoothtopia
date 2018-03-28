@@ -10,7 +10,7 @@ import {
     PERSPECTIVE_FOV,
     PERSPECTIVE_FRUSTUM_FAR,
     PERSPECTIVE_FRUSTUM_NEAR
-} from '../space'
+} from '../spacetime'
 
 const perspectiveCamera = new PerspectiveCamera(
     PERSPECTIVE_FOV,

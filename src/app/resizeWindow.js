@@ -1,4 +1,4 @@
-import {ORTHOGRAPHIC_DISTANCE} from '../space'
+import {ORTHOGRAPHIC_DISTANCE} from '../spacetime'
 import renderer from './renderer'
 import vrEffect from './vrEffect'
 import * as cameras from './cameras'

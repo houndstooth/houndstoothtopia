@@ -1,7 +1,7 @@
 import {geometry} from './geometry'
 import {Mesh, MeshLambertMaterial} from 'threejs-full-es6'
 import {CONTROLLER_COLOR} from '../color'
-import {CONTROLLER_SCALE} from '../space'
+import {CONTROLLER_SCALE} from '../spacetime'
 
 const CONTROLLER_ROTATION = [0, Math.PI / 4, 0]
 

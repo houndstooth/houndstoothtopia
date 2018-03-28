@@ -1,4 +1,3 @@
-import player from './player'
 import elevation from './elevation'
 import renderer from './renderer'
 import scene from './scene'
@@ -8,11 +7,12 @@ import vrControllers from './vrControllers'
 import vrEffect from './vrEffect'
 import {currentCamera} from './cameras'
 import updateWorld from '../world/updateWorld'
+import locomotion from './locomotion'
 
 const animate = () => {
     updateWorld()
+    locomotion.update()
     mouseControls.update()
-    player.update()
     elevation.update()
     if (vrEffect.isPresenting) {
         vrControls.update()

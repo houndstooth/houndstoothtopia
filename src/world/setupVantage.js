@@ -4,7 +4,7 @@ import {
     INITIAL_ORTHOGRAPHIC_TARGET,
     INITIAL_PERSPECTIVE_POSITION,
     INITIAL_PERSPECTIVE_TARGET,
-} from '../space'
+} from '../spacetime'
 
 const setupVantage = () => {
     perspectiveCamera.position.set(...INITIAL_PERSPECTIVE_POSITION)

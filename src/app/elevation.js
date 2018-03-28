@@ -1,5 +1,5 @@
 import player from './player'
-import {MOVEMENT_SPEED} from '../space'
+import {MOVEMENT_SPEED} from '../spacetime'
 
 let target = 0
 let direction = 0

@@ -1,4 +1,4 @@
-import {COURTYARD_SIZE} from '../space'
+import {COURTYARD_SIZE} from '../spacetime'
 
 const MY_SKETCH_SCALE = 6 * Math.sqrt(2)
 
