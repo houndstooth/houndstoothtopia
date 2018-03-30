@@ -3,7 +3,7 @@ import {geometry} from './geometry'
 import {texture} from './texture'
 import setupAtmosphere from './setupAtmosphere'
 import setupVantage from './setupVantage'
-import addItem from './addItem'
+import {addItem, addMaybeNotLoadedItem} from './addItem'
 import * as courtyardIntersections from './courtyardIntersections'
 
 const populateWorld = async () => {
@@ -66,12 +66,18 @@ const populateWorld = async () => {
 
     // the grounds
 
-    addItem({
+    // addItem({
+    //     name: 'ground, with cliffs now',
+    //     geometry: geometry.ht3d_055_houndstrudeOutwardConvex,
+    //     scale: [666, 666, 666],
+    //     color: new Color(0x707066),
+    // })
+  addMaybeNotLoadedItem({
         name: 'ground, with cliffs now',
-        geometry: geometry.ht3d_055_houndstrudeOutwardConvex,
+        geometryKey: 'ht3d_055_houndstrudeOutwardConvex',
         scale: [666, 666, 666],
         color: new Color(0x707066),
-    })
+  })
 
     addItem({
         name: 'courtyard',
