@@ -13,42 +13,42 @@ const populateWorld = async () => {
 
     // planes
 
-    addItem({
+    await addItem({
         geometry: new PlaneGeometry(1, 1),
         rotation: [0, -Math.PI / 2, 0],
         position: [1, 2, 0],
         texture: texture.controls,
     })
 
-    addItem({
+    await addItem({
         geometry: new PlaneGeometry(1, 1),
         rotation: [0, -Math.PI / 2, 0],
         position: [5, 1, -5],
         texture: texture.ht2d_010_houndazzle,
     })
 
-    addItem({
+    await addItem({
         geometry: new PlaneGeometry(1, 1),
         rotation: [0, -Math.PI / 2, 0],
         position: [5, 1, -7],
         texture: texture.ht2d_007_cmyktooth,
     })
 
-    addItem({
+    await addItem({
         geometry: new PlaneGeometry(1, 1),
         rotation: [0, -Math.PI / 2, 0],
         position: [5, 1, -9],
         texture: texture.ht2d_002_gingham_chevron_continuum,
     })
 
-    addItem({
+    await addItem({
         geometry: new PlaneGeometry(1, 1),
         rotation: [0, -Math.PI / 2, 0],
         position: [5, 1, -11],
         texture: texture.ht2d_004_gongram,
     })
 
-    addItem({
+    await addItem({
         geometry: new PlaneGeometry(1, 1),
         rotation: [0, -Math.PI / 2, 0],
         position: [5, 1, -13],
@@ -57,13 +57,13 @@ const populateWorld = async () => {
 
     // the grounds
 
-    addItem({
+    await addItem({
         name: 'ht3d_055_houndstrudeOutwardConvex',
         scale: [666, 666, 666],
         color: new Color(0x707066),
     })
 
-    addItem({
+    await addItem({
         name: 'courtyard',
         scale: [666, 666, 666],
         color: new Color(0x667066),
@@ -71,14 +71,14 @@ const populateWorld = async () => {
     })
 
     for (let i = 1; i <= 75; i++) {
-        addItem({
+        await addItem({
             name: 'ht3d_027_houndstoothPrism',
             position: courtyardIntersections.getPosition(i),
             color: new Color(0x999999),
         })
     }
 
-    addItem({
+    await addItem({
         name: 'mainHall',
         rotation: [0, -Math.PI / 4, 0],
         scale: [50, 50, 50],
@@ -88,7 +88,7 @@ const populateWorld = async () => {
 
     for (let i = 0; i < 10; i++) {
         const randomScale = (1 + Math.random()) * 50
-        addItem({
+        await addItem({
             name: 'ht3d_004_houndstrudeCompound',
             rotation: [0, 5 * Math.PI / 4, 0],
             color: new Color(0xffffff),
@@ -102,14 +102,14 @@ const populateWorld = async () => {
     for (let i = 0; i < 2; i++) {
         for (let j = 0; j < 2; j++) {
             for (let k = 0; k < 2; k++) {
-                addItem({
+                await addItem({
                     name: 'ht3d_021_houndsjectGreater',
                     rotation: [-Math.PI / 2, 0, 0],
                     scale: [.25, .25, .25],
                     color: new Color(0x707066),
                     position: [i + 2, j + 1, k],
                 })
-                addItem({
+                await addItem({
                     name: 'ht3d_021_houndsjectGreater',
                     rotation: [-Math.PI / 2, 0, 0],
                     scale: [.25, .25, .25],
@@ -120,145 +120,145 @@ const populateWorld = async () => {
         }
     }
 
-    addItem({
+    await addItem({
         name: 'ht3d_023_houndsjectLesserWithInversion',
         position: courtyardIntersections.getPosition(23),
         rotation: [0, -Math.PI / 2, 0]
     })
 
-    addItem({
+    await addItem({
         name: 'ht3d_022_houndsjectLesser',
         position: courtyardIntersections.getPosition(22),
     })
 
     // primitive inspired
 
-    addItem({
+    await addItem({
         name: 'ht3d_002_hosotooth',
         position: courtyardIntersections.getPosition(2),
     })
 
-    addItem({
+    await addItem({
         name: 'ht3d_016_hosotoothOctahedrified',
         position: courtyardIntersections.getPosition(16),
     })
 
     // OG
 
-    addItem({
+    await addItem({
         name: 'ht3d_001_dougstooth',
         position: courtyardIntersections.getPosition(1),
     })
 
     // houndstamps
 
-    addItem({
+    await addItem({
         name: 'ht3d_018_houndstampGreaterExtruded',
         position: courtyardIntersections.getPosition(18),
     })
 
-    addItem({
+    await addItem({
         name: 'ht3d_020_houndstampLesser',
         position: courtyardIntersections.getPosition(20),
     })
 
     // toroids and lathes
 
-    addItem({
+    await addItem({
         name: 'ht3d_007_houndslatheInterior',
         position: courtyardIntersections.getPosition(7),
     })
 
-    addItem({
+    await addItem({
         name: 'ht3d_010_houndslatheExterior',
         position: courtyardIntersections.getPosition(10),
     })
 
-    addItem({
+    await addItem({
         name: 'ht3d_038_houndslatheInteriorToroidalPolyhedronVersion',
         position: courtyardIntersections.getPosition(38),
     })
 
-    addItem({
+    await addItem({
         name: 'ht3d_009_houndstoothHornToroidCuspToCusp',
         position: courtyardIntersections.getPosition(9),
     })
 
-    addItem({
+    await addItem({
         name: 'ht3d_008_houndstoothHornToroidRootToRoot',
         position: courtyardIntersections.getPosition(8),
     })
 
-    addItem({
+    await addItem({
         name: 'ht3d_012_houndstoothArch',
         position: courtyardIntersections.getPosition(12),
     })
 
-    addItem({
+    await addItem({
         name: 'ht3d_017_houndstoothArchToroidalPolyhedronVersion',
         position: courtyardIntersections.getPosition(17),
     })
 
-    addItem({
+    await addItem({
         name: 'ht3d_011_houndstwist',
         position: courtyardIntersections.getPosition(11),
     })
 
-    addItem({
+    await addItem({
         name: 'ht3d_013_houndstoothHornToroidalPolyhedronRootToRoot',
         position: courtyardIntersections.getPosition(13),
     })
 
-    addItem({
+    await addItem({
         name: 'ht3d_014_houndstoothHornToroidalPolyhedronCuspToCusp',
         position: courtyardIntersections.getPosition(14),
     })
 
-    addItem({
+    await addItem({
         name: 'ht3d_015_houndslatheExteriorToroidalPolyhedronVersion',
         position: courtyardIntersections.getPosition(15),
     })
 
     // prism-based
 
-    addItem({
+    await addItem({
         name: 'ht3d_027_houndstoothPrism',
         position: courtyardIntersections.getPosition(27),
     })
 
-    addItem({
+    await addItem({
         name: 'ht3d_028_houndstoothPrismComposite',
         position: courtyardIntersections.getPosition(28),
     })
 
-    addItem({
+    await addItem({
         name: 'ht3d_029_houndstoothPrismCompositeWithSwirl',
         position: courtyardIntersections.getPosition(29),
     })
 
-    addItem({
+    await addItem({
         name: 'ht3d_030_houndstoothPrismCompositeAlignedHalves',
         position: courtyardIntersections.getPosition(30),
     })
 
-    addItem({
+    await addItem({
         name: 'ht3d_031_houndstoothPrismCompositeSwirledHalves',
         position: courtyardIntersections.getPosition(31),
     })
 
     // hedra
 
-    addItem({
+    await addItem({
         name: 'ht3d_019_octahedstoothWithItsHomogeneousFacesRoots',
         position: courtyardIntersections.getPosition(19),
     })
 
-    addItem({
+    await addItem({
         name: 'ht3d_037_octahedstoothWithItsHomogeneousFacesCusps',
         position: courtyardIntersections.getPosition(37),
     })
 
-    addItem({
+    await addItem({
         name: 'ht3d_032_rhombicDodecahedstooth',
         position: courtyardIntersections.getPosition(32),
     })
