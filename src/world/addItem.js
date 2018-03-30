@@ -5,17 +5,21 @@ import {DEFAULT_ITEM_COLOR} from '../color'
 import {items} from './items'
 import {geometry} from '../world/geometry'
 
-export const addItem = ({
-                     name,
-                          geometryResult,
-                     texture,
-                     color = DEFAULT_ITEM_COLOR,
-                     position = DEFAULT_ITEM_POSITION,
-                     scale = DEFAULT_ITEM_SCALE,
-                     rotation = DEFAULT_ITEM_ROTATION
-                 }) => {
-    const material = texture ? new MeshBasicMaterial({map: texture,  transparent: true}) : new MeshLambertMaterial({color})
-    const mesh = new Mesh(geometryResult, material)
+const addItem = async ({
+                           name,
+                           geometry: standardGeometry,
+                           texture,
+                           color = DEFAULT_ITEM_COLOR,
+                           position = DEFAULT_ITEM_POSITION,
+                           scale = DEFAULT_ITEM_SCALE,
+                           rotation = DEFAULT_ITEM_ROTATION
+                       }) => {
+    const material = texture ? new MeshBasicMaterial({
+        map: texture,
+        transparent: true
+    }) : new MeshLambertMaterial({color})
+
+    const mesh = new Mesh(standardGeometry || await geometry.load(name), material)
     mesh.position.set(...position)
     mesh.rotation.set(...rotation)
     mesh.scale.set(...scale)
@@ -27,27 +31,4 @@ export const addItem = ({
     items[name].push(mesh)
 }
 
-export const addMaybeNotLoadedItem = ({
-                                 name,
-                                 geometryKey,
-                                 texture,
-                                 color = DEFAULT_ITEM_COLOR,
-                                 position = DEFAULT_ITEM_POSITION,
-                                 scale = DEFAULT_ITEM_SCALE,
-                                 rotation = DEFAULT_ITEM_ROTATION
-                               }) => {
-  const material = texture ? new MeshBasicMaterial({map: texture,  transparent: true}) : new MeshLambertMaterial({color})
-
-  const geometryResult = geometry.maybeLoad(geometryKey)
-
-  const mesh = new Mesh(geometryResult, material)
-  mesh.position.set(...position)
-  mesh.rotation.set(...rotation)
-  mesh.scale.set(...scale)
-  // mesh.castShadow = true
-  // mesh.receiveShadow = true
-  scene.add(mesh)
-
-  if (!items[name]) items[name] = []
-  items[name].push(mesh)
-}
+export default addItem
