@@ -106,7 +106,7 @@ const populateWorld = async () => {
         addItem({
             name: 'cloud',
             geometry: geometry.ht3d_004_houndstrudeCompound,
-            rotation: [0, 0, 0],
+            rotation: [0, 5 * Math.PI / 4, 0],
             color: new Color(0xffffff),
             position: [1200 - Math.random() * 2400, 375, 1200 - Math.random() * 2400],
             scale: [randomScale, randomScale, randomScale],
