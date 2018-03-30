@@ -28,10 +28,10 @@ const update = () => {
     player.translateZ(-MOVEMENT_SPEED * locomotion.left)
   }
   if (locomotion.turnRight) {
-    player.rotateY(-ROTATION_SPEED * locomotion.turnRight)
+    player.rotateY(-ROTATION_SPEED * locomotion.turnRight * 1.5)
   }
   if (locomotion.turnLeft) {
-    player.rotateY(ROTATION_SPEED * locomotion.turnLeft)
+    player.rotateY(ROTATION_SPEED * locomotion.turnLeft * 1.5)
   }
 }
 
