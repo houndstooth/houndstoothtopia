@@ -1,10 +1,10 @@
 import * as cameras from './cameras'
 import vrEffect from './vrEffect'
 
-const toggleVR = () => vrEffect.isPresenting ? exitPresent() : enterPresent()
+const toggleVR = () => cameras.currentCamera === cameras.perspectiveCamera ? exitPresent() : enterPresent()
 
 const exitPresent = () => {
-    vrEffect.exitPresent()
+    vrEffect.exitPresent().catch(() => {})
     cameras.currentCamera = cameras.orthographicCamera
 }
 
