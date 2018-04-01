@@ -5,9 +5,12 @@ import {
     INITIAL_PERSPECTIVE_POSITION,
     INITIAL_PERSPECTIVE_TARGET,
 } from '../spacetime'
+import player from '../app/player'
 
 const setupVantage = () => {
-    perspectiveCamera.position.set(...INITIAL_PERSPECTIVE_POSITION)
+    player.position.set(...INITIAL_PERSPECTIVE_POSITION)
+    player.lookAt(...INITIAL_PERSPECTIVE_TARGET)
+
     perspectiveCamera.lookAt(...INITIAL_PERSPECTIVE_TARGET)
 
     orthographicCamera.position.set(...INITIAL_ORTHOGRAPHIC_POSITION)

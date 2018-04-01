@@ -1,15 +1,18 @@
 import player from './player'
-import {MOVEMENT_SPEED} from '../spacetime'
+import {ELEVATION_TIER_HEIGHT, HUMAN_HEIGHT, MOVEMENT_SPEED} from '../spacetime'
 
-let target = 0
+let target = HUMAN_HEIGHT
 let direction = 0
+
+const UP = 1
+const DOWN = -1
 
 const update = () => {
     const y = player.position.y
 
-    if (direction === 1 && y < target) {
+    if (direction === UP && y < target) {
         player.translateY(MOVEMENT_SPEED)
-    } else if (direction === -1 && y > target) {
+    } else if (direction === DOWN && y > target) {
         player.translateY(-MOVEMENT_SPEED)
     } else {
         direction = 0
@@ -17,11 +20,13 @@ const update = () => {
 }
 
 const change = newDirection => {
-    if (direction !== 0) return
+    if (alreadyChangingElevation()) return
     direction = newDirection
-    target += 10 * newDirection
-    if (target < 0) target = 0
+    target += ELEVATION_TIER_HEIGHT * newDirection
+    if (target < HUMAN_HEIGHT) target = HUMAN_HEIGHT
 }
+
+const alreadyChangingElevation = () => direction !== 0
 
 const elevation = {
     change,

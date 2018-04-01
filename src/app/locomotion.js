@@ -16,16 +16,16 @@ const tween = (direction, target) => {
 const update = () => {
   TWEEN.update();
   if (locomotion.forward) {
-    player.translateX(MOVEMENT_SPEED * locomotion.forward)
+    player.translateZ(-MOVEMENT_SPEED * locomotion.forward)
   }
   if (locomotion.backward) {
-    player.translateX(-MOVEMENT_SPEED * locomotion.backward)
+    player.translateZ(MOVEMENT_SPEED * locomotion.backward)
   }
   if (locomotion.right) {
-    player.translateZ(MOVEMENT_SPEED * locomotion.right)
+    player.translateX(MOVEMENT_SPEED * locomotion.right)
   }
   if (locomotion.left) {
-    player.translateZ(-MOVEMENT_SPEED * locomotion.left)
+    player.translateX(-MOVEMENT_SPEED * locomotion.left)
   }
   if (locomotion.turnRight) {
     player.rotateY(-ROTATION_SPEED * locomotion.turnRight * 1.5)
