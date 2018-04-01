@@ -73,7 +73,7 @@ const populateWorld = async () => {
     for (let i = 1; i <= 75; i++) {
         await addItem({
             name: 'ht3d_027_houndstoothPrism',
-            position: courtyardIntersections.getPosition(i),
+            position: courtyardIntersections.getPosition(i, 0),
             color: new Color(0x999999),
         })
     }

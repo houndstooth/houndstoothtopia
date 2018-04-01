@@ -78,9 +78,9 @@ const rotate = position => {
     ]
 }
 
-const getPosition = intersection => {
-  const position = scale(rotate(courtyardIntersections[intersection]))
-  return [position[0], 0, position[1]]
+const getPosition = (intersection, verticalOffset = 4) => {
+    const position = scale(rotate(courtyardIntersections[intersection]))
+    return [position[0], verticalOffset, position[1]]
 }
 
 export {
