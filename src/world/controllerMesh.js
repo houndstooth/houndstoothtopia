@@ -5,9 +5,15 @@ import {CONTROLLER_SCALE} from '../spacetime'
 
 const CONTROLLER_ROTATION = [0, Math.PI / 4, 0]
 
+const idealControllerMeshCycle = [
+    'ht3d_000_houndstooth',
+    'ht3d_027_houndstoothPrism',
+    'ht3d_028_houndstoothPrismComposite'
+]
+
 const controllerMesh = index => {
     const mesh = new Mesh(
-        wrappedIndex(geometry.byIndex, index),
+        geometry[wrappedIndex(idealControllerMeshCycle, index)],
         new MeshLambertMaterial({color: CONTROLLER_COLOR}),
     )
     mesh.rotation.set(...CONTROLLER_ROTATION)
@@ -30,4 +36,5 @@ const wrappedIndex = (array, index) => {
 
     return array[ i ]
 }
+
 export default controllerMesh
