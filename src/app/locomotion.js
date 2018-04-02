@@ -1,20 +1,12 @@
-import TWEEN from '@tweenjs/tween.js/src/Tween'
 import {MOVEMENT_EASING_TIME, MOVEMENT_SPEED, ROTATION_SPEED} from '../spacetime'
 import player from './player'
+import {ease} from './easing'
 
-const start = direction => tween(direction, 1)
+const start = direction => ease(locomotion, direction, 1, MOVEMENT_EASING_TIME)
 
-const stop = direction => tween(direction, 0)
-
-const tween = (direction, target) => {
-    new TWEEN.Tween(locomotion)
-        .to({[direction]: target}, MOVEMENT_EASING_TIME)
-        .easing(TWEEN.Easing.Quintic.Out)
-        .start()
-}
+const stop = direction => ease(locomotion, direction, 0, MOVEMENT_EASING_TIME)
 
 const update = () => {
-    TWEEN.update()
     if (locomotion.forward) {
         player.translateZ(-MOVEMENT_SPEED * locomotion.forward)
     }

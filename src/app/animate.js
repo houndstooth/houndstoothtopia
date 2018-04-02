@@ -8,9 +8,11 @@ import vrEffect from './vrEffect'
 import {currentCamera} from './cameras'
 import updateWorld from '../world/updateWorld'
 import locomotion from './locomotion'
+import easing from './easing'
 
 const animate = () => {
     updateWorld()
+    easing.update()
     locomotion.update()
     mouseControls.update()
     elevation.update()

@@ -1,36 +1,32 @@
 import player from './player'
-import {ELEVATION_TIER_HEIGHT, HUMAN_HEIGHT, MOVEMENT_SPEED} from '../spacetime'
+import {ELEVATION_EASING_TIME, ELEVATION_TIER_HEIGHT, HUMAN_HEIGHT} from '../spacetime'
+import {ease} from './easing'
 
-let target = HUMAN_HEIGHT
-let direction = 0
+let isChanging = false
 
-const UP = 1
-const DOWN = -1
-
-const update = () => {
-    const y = player.position.y
-
-    if (direction === UP && y < target) {
-        player.translateY(MOVEMENT_SPEED)
-    } else if (direction === DOWN && y > target) {
-        player.translateY(-MOVEMENT_SPEED)
-    } else {
-        direction = 0
-    }
-}
+const update = () => player.position.y = elevation.current
 
 const change = newDirection => {
-    if (alreadyChangingElevation()) return
-    direction = newDirection
-    target += ELEVATION_TIER_HEIGHT * newDirection
-    if (target < HUMAN_HEIGHT) target = HUMAN_HEIGHT
+  if (isChanging) return
+  const newTarget = precisionRound(elevation.current + ELEVATION_TIER_HEIGHT * newDirection, 1)
+  if (newTarget < HUMAN_HEIGHT) return
+  isChanging = true
+
+  ease(elevation, 'current', newTarget, ELEVATION_EASING_TIME, () => {
+    elevation.current = precisionRound(elevation.current, 1)
+    isChanging = false
+  })
 }
 
-const alreadyChangingElevation = () => direction !== 0
+const precisionRound = (number, precision) => {
+  const factor = Math.pow(10, precision);
+  return Math.round(number * factor) / factor;
+}
 
 const elevation = {
-    change,
-    update,
+  current: HUMAN_HEIGHT,
+  change,
+  update,
 }
 
 export default elevation
