@@ -4,12 +4,20 @@ import vrEffect from './vrEffect'
 const toggleVR = () => cameras.currentCamera === cameras.perspectiveCamera ? exitPresent() : enterPresent()
 
 const exitPresent = () => {
-    vrEffect.exitPresent().catch(() => {})
+    if (vrEffect.hasVR) {
+        vrEffect.exitPresent()
+    } else {
+      vrEffect.isPresenting = false
+    }
     cameras.currentCamera = cameras.orthographicCamera
 }
 
 const enterPresent = () => {
-    vrEffect.requestPresent().catch(() => {})
+    if (vrEffect.hasVR) {
+        vrEffect.requestPresent()
+    } else {
+      vrEffect.isPresenting = true
+    }
     cameras.currentCamera = cameras.perspectiveCamera
 }
 
