@@ -4,6 +4,7 @@ import setupAtmosphere from './setupAtmosphere'
 import setupVantage from './setupVantage'
 import addItem from './addItem'
 import * as courtyardIntersections from './courtyardIntersections'
+import {geometry} from '../world/geometry'
 
 const populateWorld = async () => {
     setupAtmosphere()
@@ -262,6 +263,8 @@ const populateWorld = async () => {
         name: 'ht3d_032_rhombicDodecahedstooth',
         position: courtyardIntersections.getPosition(32),
     })
+
+    geometry.loadTheRest()
 }
 
 export default populateWorld
