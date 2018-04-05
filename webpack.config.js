@@ -15,7 +15,11 @@ module.exports = {
                 loader: 'babel-loader',
             },
             {
-                test: /\.(obj|png)$/,
+                test: /\.obj$/,
+                loader: 'raw-loader',
+            },
+            {
+                test: /\.png$/,
                 loader: 'file-loader',
             },
         ],

@@ -5,38 +5,24 @@ console.time = (...args) => args[0] !== 'OBJLoader' && console.oldTime.apply(con
 console.oldTimeEnd = console.timeEnd
 console.timeEnd = (...args) => args[0] !== 'OBJLoader' && console.oldTimeEnd.apply(console, args)
 
+const objLoader = new OBJLoader()
+
 const context = require.context('../../geometry')
 
-const geometry = {
-}
+const geometry = {}
 
-const loadOne = (name, path, resolve) => {
-    new OBJLoader().load(context(path), object => {
-        const result = object.children[0].geometry
-        geometry[name] = result
-        resolve(result)
-    })
-}
+const pathToName = path => path.replace('./', '').replace('.obj', '')
 
-const load = name => {
-    if (geometry[name]) return geometry[name]
-    const path = './' + name + '.obj'
-    return new Promise(resolve => {
-        context.keys().forEach(key => {
-            key === path && loadOne(name, path, resolve)
-        })
-    })
-}
+const nameToPath = name => './' + name + '.obj'
 
-const loadTheRest = () => {
-    Promise.all(
-        context.keys().map(path => {
-            const name = path.replace('./', '').replace('.obj', '')
-            return geometry[name] || new Promise(resolve => loadOne(name, path, resolve))
-        })
-    )
-}
+const loadOne = path => geometry[pathToName(path)] = objLoader.parse(context(path)).children[0].geometry
 
+const load = name => geometry[name] || loadOne(context.keys().find(key => key === nameToPath(name)))
+
+const loadTheRest = () => context.keys().forEach(path => geometry[pathToName(path)] || loadOne(path))
+
+geometry.pathToName = pathToName
+geometry.nameToPath = nameToPath
 geometry.load = load
 geometry.loadTheRest = loadTheRest
 

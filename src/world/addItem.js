@@ -5,7 +5,7 @@ import {DEFAULT_ITEM_COLOR} from '../color'
 import {items} from './items'
 import {geometry} from '../world/geometry'
 
-const addItem = async ({
+const addItem = ({
                            name,
                            geometry: standardGeometry,
                            texture,
@@ -19,7 +19,7 @@ const addItem = async ({
         transparent: true
     }) : new MeshLambertMaterial({color})
 
-    const mesh = new Mesh(standardGeometry || await geometry.load(name), material)
+    const mesh = new Mesh(standardGeometry || geometry.load(name), material)
     mesh.position.set(...position)
     mesh.rotation.set(...rotation)
     mesh.scale.set(...scale)
