@@ -1,5 +1,5 @@
-import {geometry} from './geometry'
 import {Mesh, MeshLambertMaterial} from 'threejs-full-es6'
+import geometry from './geometry'
 import {CONTROLLER_COLOR} from '../color'
 import {CONTROLLER_SCALE} from '../spacetime'
 
@@ -93,7 +93,7 @@ const wrappedIndex = (array, index) => {
         i = index % array.length
     }
 
-    return array[ i ]
+    return array[i]
 }
 
 export default controllerMesh

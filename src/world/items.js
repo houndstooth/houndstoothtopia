@@ -1,5 +1,1 @@
-const items = {}
-
-export {
-    items,
-}
+export const items = {}

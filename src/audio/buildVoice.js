@@ -6,7 +6,7 @@ const buildVoice = pitch => {
     positionalSound.setVolume(0)
     positionalSound.setRolloffFactor(2)
     positionalSound.setDistanceModel('exponential')
-    positionalSound.getOutput().panningModel = "HRTF"
+    positionalSound.getOutput().panningModel = 'HRTF'
 
     const gainNode = positionalSound.getOutput()
 

@@ -1,5 +1,5 @@
 import buildVoice from './buildVoice'
-import {SUPERTILE_PITCH_SET, PERIMETER_PITCH_SET} from './pitches'
+import {PERIMETER_PITCH_SET, SUPERTILE_PITCH_SET} from './pitches'
 
 const voices = {}
 

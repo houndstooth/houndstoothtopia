@@ -26,6 +26,4 @@ geometry.nameToPath = nameToPath
 geometry.load = load
 geometry.loadTheRest = loadTheRest
 
-export {
-    geometry,
-}
+export default geometry

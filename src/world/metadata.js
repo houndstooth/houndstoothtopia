@@ -1,4 +1,4 @@
-import {geometry} from './geometry'
+import geometry from './geometry'
 
 const metadata = {}
 

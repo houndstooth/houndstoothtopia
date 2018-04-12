@@ -4,7 +4,7 @@ import setupAtmosphere from './setupAtmosphere'
 import setupVantage from './setupVantage'
 import addItem from './addItem'
 import * as courtyardIntersections from './courtyardIntersections'
-import {geometry} from '../world/geometry'
+import geometry from '../world/geometry'
 import {addPlinthItem} from './plinth'
 
 const populateWorld = async () => {

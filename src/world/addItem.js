@@ -3,7 +3,7 @@ import scene from '../app/scene'
 import {DEFAULT_ITEM_POSITION, DEFAULT_ITEM_ROTATION, DEFAULT_ITEM_SCALE} from '../spacetime'
 import {DEFAULT_ITEM_COLOR} from '../color'
 import {items} from './items'
-import {geometry} from '../world/geometry'
+import geometry from '../world/geometry'
 
 const addItem = ({
                            name,
@@ -12,7 +12,7 @@ const addItem = ({
                            color = DEFAULT_ITEM_COLOR,
                            position = DEFAULT_ITEM_POSITION,
                            scale = DEFAULT_ITEM_SCALE,
-                           rotation = DEFAULT_ITEM_ROTATION
+                           rotation = DEFAULT_ITEM_ROTATION,
                        }) => {
   setTimeout(() => {
     const material = texture ? new MeshBasicMaterial({

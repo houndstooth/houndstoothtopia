@@ -45,8 +45,8 @@ const offsetToNewIntersectionNumber = intersectionNumber => parseInt(intersectio
 const flipToOtherHalf = position => [-position[0], position[1]]
 
 const courtyardIntersectionsInTheRightHalf = Object.entries(courtyardIntersectionsInTheLeftHalf).reduce((ciitrh, [intersectionNumber, intersection]) => {
-  ciitrh[offsetToNewIntersectionNumber(intersectionNumber)] = flipToOtherHalf(intersection)
-  return ciitrh
+    ciitrh[offsetToNewIntersectionNumber(intersectionNumber)] = flipToOtherHalf(intersection)
+    return ciitrh
 }, {})
 
 const courtyardIntersectionsDownTheCenterLine = {
@@ -58,10 +58,10 @@ const courtyardIntersectionsDownTheCenterLine = {
 }
 
 const courtyardIntersections = Object.assign(
-  {},
-  courtyardIntersectionsInTheLeftHalf,
-  courtyardIntersectionsInTheRightHalf,
-  courtyardIntersectionsDownTheCenterLine
+    {},
+    courtyardIntersectionsInTheLeftHalf,
+    courtyardIntersectionsInTheRightHalf,
+    courtyardIntersectionsDownTheCenterLine
 )
 
 const scale = position => position.map(coordinate => coordinate * COURTYARD_SIZE / MY_SKETCH_SCALE)
@@ -78,11 +78,7 @@ const rotate = position => {
     ]
 }
 
-const getPosition = (intersection, verticalOffset = 4) => {
+export const getPosition = (intersection, verticalOffset = 4) => {
     const position = scale(rotate(courtyardIntersections[intersection]))
     return [position[0], verticalOffset, position[1]]
-}
-
-export {
-    getPosition,
 }

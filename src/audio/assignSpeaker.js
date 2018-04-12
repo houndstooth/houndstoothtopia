@@ -3,7 +3,7 @@ import {items} from '../world/items'
 const assignSpeaker = () => {
     let success = false
     let specificItem
-    while(!success) {
+    while (!success) {
         specificItem = randomElement(randomValue(items))
         if (!specificItem.assigned) {
             specificItem.assigned = true
