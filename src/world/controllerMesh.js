@@ -1,5 +1,5 @@
 import {Mesh, MeshLambertMaterial} from 'threejs-full-es6'
-import geometry from './geometry'
+import geometryData from './geometryData'
 import {CONTROLLER_COLOR} from '../color'
 import {CONTROLLER_SCALE} from '../spacetime'
 
@@ -72,7 +72,7 @@ const idealControllerMeshCycle = [
 
 const controllerMesh = index => {
     const mesh = new Mesh(
-        geometry[wrappedIndex(idealControllerMeshCycle, index)],
+        geometryData.geometry[wrappedIndex(idealControllerMeshCycle, index)],
         new MeshLambertMaterial({color: CONTROLLER_COLOR}),
     )
     mesh.rotation.set(...CONTROLLER_ROTATION)

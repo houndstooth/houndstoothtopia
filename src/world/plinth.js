@@ -1,11 +1,11 @@
 import * as courtyardIntersections from './courtyardIntersections'
-import metadata from './metadata'
+import geometryData from './geometryData'
 import addItem from './addItem'
 
 export const addPlinthItem = id => {
-    const name = metadata.nameFromId(id)
+    const name = geometryData.nameFromId(id)
     addItem({
         name,
-        position: courtyardIntersections.getPosition(id, metadata[name].plinthOffset),
+        position: courtyardIntersections.getPosition(id, geometryData.metadata[name].plinthOffset),
     })
 }

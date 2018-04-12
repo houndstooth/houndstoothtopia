@@ -3,7 +3,7 @@ import scene from '../app/scene'
 import {DEFAULT_ITEM_POSITION, DEFAULT_ITEM_ROTATION, DEFAULT_ITEM_SCALE} from '../spacetime'
 import {DEFAULT_ITEM_COLOR} from '../color'
 import {items} from './items'
-import geometry from '../world/geometry'
+import geometryData from './geometryData'
 
 const addItem = ({
                            name,
@@ -20,7 +20,7 @@ const addItem = ({
         transparent: true
     }) : new MeshLambertMaterial({color})
 
-    const mesh = new Mesh(standardGeometry || geometry.load(name), material)
+    const mesh = new Mesh(standardGeometry || geometryData.load(name), material)
     mesh.position.set(...position)
     mesh.rotation.set(...rotation)
     mesh.scale.set(...scale)
