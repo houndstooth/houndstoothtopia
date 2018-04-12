@@ -1,5 +1,5 @@
 import {Color, PlaneGeometry} from 'threejs-full-es6'
-import {texture} from './texture'
+import textureData from './textureData'
 import setupAtmosphere from './setupAtmosphere'
 import setupVantage from './setupVantage'
 import addItem from './addItem'
@@ -10,52 +10,6 @@ import {addPlinthItem} from './plinth'
 const populateWorld = async () => {
     setupAtmosphere()
     setupVantage()
-
-    await texture.load()
-
-    // planes
-
-    await addItem({
-        geometry: new PlaneGeometry(1, 1),
-        rotation: [0, -Math.PI / 2, 0],
-        position: [1, 2, 0],
-        texture: texture.controls,
-    })
-
-    await addItem({
-        geometry: new PlaneGeometry(1, 1),
-        rotation: [0, -Math.PI / 2, 0],
-        position: [5, 1, -5],
-        texture: texture.ht2d_010_houndazzle,
-    })
-
-    await addItem({
-        geometry: new PlaneGeometry(1, 1),
-        rotation: [0, -Math.PI / 2, 0],
-        position: [5, 1, -7],
-        texture: texture.ht2d_007_cmyktooth,
-    })
-
-    await addItem({
-        geometry: new PlaneGeometry(1, 1),
-        rotation: [0, -Math.PI / 2, 0],
-        position: [5, 1, -9],
-        texture: texture.ht2d_002_gingham_chevron_continuum,
-    })
-
-    await addItem({
-        geometry: new PlaneGeometry(1, 1),
-        rotation: [0, -Math.PI / 2, 0],
-        position: [5, 1, -11],
-        texture: texture.ht2d_004_gongram,
-    })
-
-    await addItem({
-        geometry: new PlaneGeometry(1, 1),
-        rotation: [0, -Math.PI / 2, 0],
-        position: [5, 1, -13],
-        texture: texture.ht2d_009_houndsmorphosis,
-    })
 
     // the grounds
 
@@ -127,6 +81,53 @@ const populateWorld = async () => {
     }
 
     geometryData.loadTheRest()
+
+    await textureData.loadAll()
+
+    console.log(textureData.texture, 'hey?')
+    // planes
+
+    addItem({
+        geometry: new PlaneGeometry(1, 1),
+        rotation: [0, -Math.PI / 2, 0],
+        position: [1, 2, 0],
+        texture: textureData.texture.controls,
+    })
+
+    addItem({
+        geometry: new PlaneGeometry(1, 1),
+        rotation: [0, -Math.PI / 2, 0],
+        position: [5, 1, -5],
+        texture: textureData.texture.ht2d_010_houndazzle,
+    })
+
+    addItem({
+        geometry: new PlaneGeometry(1, 1),
+        rotation: [0, -Math.PI / 2, 0],
+        position: [5, 1, -7],
+        texture: textureData.texture.ht2d_007_cmyktooth,
+    })
+
+    addItem({
+        geometry: new PlaneGeometry(1, 1),
+        rotation: [0, -Math.PI / 2, 0],
+        position: [5, 1, -9],
+        texture: textureData.texture.ht2d_002_gingham_chevron_continuum,
+    })
+
+    addItem({
+        geometry: new PlaneGeometry(1, 1),
+        rotation: [0, -Math.PI / 2, 0],
+        position: [5, 1, -11],
+        texture: textureData.texture.ht2d_004_gongram,
+    })
+
+    addItem({
+        geometry: new PlaneGeometry(1, 1),
+        rotation: [0, -Math.PI / 2, 0],
+        position: [5, 1, -13],
+        texture: textureData.texture.ht2d_009_houndsmorphosis,
+    })
 }
 
 export default populateWorld
