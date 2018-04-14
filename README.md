@@ -1,3 +1,3 @@
-# Hall of Houndstooth
+# Houndstoothtopia
 
-VR infrastructure extracted from: https://github.com/puckey/dance-tonite
+A topia of houndstooth.

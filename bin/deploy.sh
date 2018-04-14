@@ -12,4 +12,4 @@ if [[ $? == 1 ]] ; then
 fi
 
 webpack
-cf zero-downtime-push hall-of-houndstooth -f manifest.yml
+cf zero-downtime-push houndstoothtopia -f manifest.yml
