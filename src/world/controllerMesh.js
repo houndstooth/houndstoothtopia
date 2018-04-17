@@ -6,7 +6,10 @@ import {CONTROLLER_SCALE} from '../spacetime'
 const CONTROLLER_ROTATION = [0, Math.PI / 4, 0]
 
 const idealControllerMeshCycle = [
+    // fundamental/dimensional family (1 of 2)
     'ht3d_000_houndstooth',
+
+    // prismatoid family
     'ht3d_006_houndstrudeFreshmans',
     'ht3d_036_houndstrudeFreshmansMiteredByEdges',
     'ht3d_055_houndstrudeOutwardConvex',
@@ -21,6 +24,8 @@ const idealControllerMeshCycle = [
     'ht3d_029_houndstoothPrismCompositeWithSwirl',
     'ht3d_030_houndstoothPrismCompositeAlignedHalves',
     'ht3d_031_houndstoothPrismCompositeSwirledHalves',
+
+    // projections, faces, & compounds family
     'ht3d_020_houndstampLesser',
     'ht3d_018_houndstampGreaterExtruded',
     'ht3d_054_houndstampGreaterExtrudedWithSwirl',
@@ -30,7 +35,6 @@ const idealControllerMeshCycle = [
     'ht3d_037_octahedstoothWithItsHomogeneousFacesCusps',
     'ht3d_019_octahedstoothWithItsHomogeneousFacesRoots',
     'ht3d_032_rhombicDodecahedstooth',
-    'ht3d_026_parallelopipedStripedHoundstooth',
     'ht3d_041_vertoothCusps',
     'ht3d_042_vertoothRoots',
     'ht3d_043_vertoothCompoundCusps',
@@ -44,6 +48,8 @@ const idealControllerMeshCycle = [
     'ht3d_051_vertoothSwirl',
     'ht3d_052_vertoothSwirlCompound',
     'ht3d_053_vertoothSwirlCompoundCounterAndClockwise',
+
+    // lathe family
     'ht3d_024_helixtooth',
     'ht3d_025_helixtoothSquaredOff',
     'ht3d_007_houndslatheInterior',
@@ -57,6 +63,8 @@ const idealControllerMeshCycle = [
     'ht3d_012_houndstoothArch',
     'ht3d_017_houndstoothArchToroidalPolyhedronVersion',
     'ht3d_011_houndstwist',
+
+    // topological family
     'ht3d_002_hosotooth',
     'ht3d_016_hosotoothOctahedrified',
     'ht3d_039a_houndstorusToroidalGrainSolidsTop',
@@ -67,6 +75,11 @@ const idealControllerMeshCycle = [
     'ht3d_040b_houndstorusPoloidalGrainSolidsOut',
     'ht3d_040c_houndstorusPoloidalGrainSolidsBottom',
     'ht3d_040d_houndstorusPoloidalGrainSolidsIn',
+
+    // miscellaneous family
+    'ht3d_026_parallelopipedStripedHoundstooth',
+
+    // fundamental/dimensional family (2 of 2)
     'ht3d_001_dougstooth',
 ]
 
