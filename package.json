@@ -1,9 +1,13 @@
 {
-  "name": "hall-of-houndstooth",
+  "name": "houndstoothtopia",
   "version": "1.0.0",
   "scripts": {
-    "start": "webpack-dev-server",
-    "deploy": "webpack && cf push"
+    "start": "sh ./bin/cross_env_pre_source.sh webpack-dev-server",
+    "deploy": "sh ./bin/cross_env_pre_source.sh 'sh ./bin/deploy.sh'",
+    "performance": "sh ./bin/cross_env_pre_source.sh 'sh ./bin/performance.sh'",
+    "performance-base": "sh ./bin/cross_env_pre_source.sh 'sh ./bin/performanceBase.sh'",
+    "kill": "sh ./bin/kill_process_by_port.sh",
+    "kill-likely-interference": "sh ./bin/kill_likely_interference.sh"
   },
   "devDependencies": {
     "babel-core": "^6.5.2",
@@ -11,9 +15,11 @@
     "babel-polyfill": "^6.23.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-0": "^6.24.1",
+    "csv": "^3.0.2",
     "file-loader": "^0.11.2",
     "three-vrcontroller-module": "github:houndstooth/THREE.VRController",
     "threejs-full-es6": "^4.2.4",
+    "useragent": "^2.3.0",
     "webpack": "^3.3.0",
     "webpack-dev-server": "^2.11.1"
   }

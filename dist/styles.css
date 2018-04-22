@@ -1,6 +1,17 @@
 body {
     margin: 0;
     overflow: hidden;
+    color: #444;
+    cursor: move;
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+
+body:active {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
 }
 
 #interface {
@@ -14,7 +25,6 @@ body {
 }
 
 #toggle {
-    color: #000;
     font-size: 24px;
     font-family: Arial;
     cursor: pointer;

@@ -8,7 +8,6 @@ import * as state from './state'
 import updateWorld from '../world/updateWorld'
 
 const animate = () => {
-    vrEffect.requestAnimationFrame(animate)
     updateWorld()
     if (vrEffect.isPresenting) {
         player.update()
