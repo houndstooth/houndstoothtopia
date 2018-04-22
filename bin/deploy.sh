@@ -2,7 +2,6 @@
 
 cf a > /dev/null
 if [[ $? == 1 ]] ; then
-
     if [[ -z "${PWS_ORG+x}" ]] ; then
         printf "${Cyan}Please set PWS_ORG, PWS_SPACE, PWS_USERNAME, and PWS_PASSWORD environment variables if you would like to automatically push to a Cloud Foundry.\n${NC}"
         exit 1

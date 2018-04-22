@@ -28,16 +28,16 @@ const setupAtmosphere = () => {
     directionalLight.position.set(...DIRECTIONAL_LIGHT_POSITION)
     // directionalLight.target.set()
     // directionalLight.castShadow = true
-    // directionalLight.shadowCameraNear = 8;
-    // directionalLight.shadowCameraFar = 200;
-    // directionalLight.shadow.camera.left = 200;
-    // directionalLight.shadow.camera.right = -200.0;
-    // directionalLight.shadow.camera.top = 200;
-    // directionalLight.shadow.camera.bottom = -200;
-    // // directionalLight.shadowDarkness = 0.5;
-    // directionalLight.shadowMapWidth = 2048;
-    // directionalLight.shadowMapHeight = 2048;
-    // directionalLight.shadowBias = -0.001;
+    // directionalLight.shadowCameraNear = 8
+    // directionalLight.shadowCameraFar = 200
+    // directionalLight.shadow.camera.left = 200
+    // directionalLight.shadow.camera.right = -200.0
+    // directionalLight.shadow.camera.top = 200
+    // directionalLight.shadow.camera.bottom = -200
+    // // directionalLight.shadowDarkness = 0.5
+    // directionalLight.shadowMapWidth = 2048
+    // directionalLight.shadowMapHeight = 2048
+    // directionalLight.shadowBias = -0.001
 
     scene.fog = new Fog(BACKGROUND_COLOR, FOG_NEAR, FOG_FAR)
 

@@ -84,7 +84,6 @@ const populateWorld = async () => {
 
     await textureData.loadAll()
 
-    console.log(textureData.texture, 'hey?')
     // planes
 
     addItem({

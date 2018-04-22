@@ -36,9 +36,9 @@ fs.readdir('./geometry', (err, infiles) => {
                     shell: true
                 })
                 fs.readFile(infile, 'utf8', (err, data) => {
-                    const linesExceptFirst = data.split('\n').filter(line => line !== '').join('\n');
-                    fs.writeFile(infile, linesExceptFirst, noop);
-                }, noop);
+                    const linesExceptFirst = data.split('\n').filter(line => line !== '').join('\n')
+                    fs.writeFile(infile, linesExceptFirst, noop)
+                }, noop)
             })
     })
 })
