@@ -4,7 +4,7 @@ let time
 let fps = 90
 const recordings = []
 
-const RECORDINGS_TO_TAKE = 1024
+const RECORDINGS_TO_TAKE = 8192
 const RECORDINGS_TO_SHAVE = 4
 
 setTimeout(() => {

@@ -12,7 +12,7 @@ http.createServer((req, res) => {
     res.writeHead(OKAY, {'Access-Control-Allow-Origin': '*'})
 
     if (req.url === '/connected') {
-        console.log(color.cyan('Recording now. Give it ~15 seconds...'))
+        console.log(color.cyan('Recording now. Give it a few minutes...'))
     } else {
         console.log(color.green('Done recording!'))
         handleResults(req)
