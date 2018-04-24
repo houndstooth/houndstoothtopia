@@ -6,4 +6,3 @@ node_modules/
 dist/*.obj
 dist/*.png
 dist/bundle.js
-performance/*.tsv
