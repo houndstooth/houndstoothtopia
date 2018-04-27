@@ -1,3 +1,3 @@
-import {TextureLoader} from 'threejs-full-es6'
+import {TextureLoader} from 'three-full'
 
 export default new TextureLoader()

@@ -85,7 +85,9 @@ const onKeyUp = event => {
     }
 }
 
-window.addEventListener('keydown', onKeyDown)
-window.addEventListener('keyup', onKeyUp)
+const attachKeyboard = () => {
+    window.addEventListener('keydown', onKeyDown)
+    window.addEventListener('keyup', onKeyUp)
+}
 
-export default keyboard
+export default attachKeyboard

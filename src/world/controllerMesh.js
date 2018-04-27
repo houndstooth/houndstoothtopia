@@ -1,4 +1,4 @@
-import {Mesh, MeshLambertMaterial} from 'threejs-full-es6'
+import {Mesh, MeshLambertMaterial} from 'three-full'
 import geometryData from './geometryData'
 import {CONTROLLER_COLOR} from '../color'
 import {CONTROLLER_SCALE} from '../spacetime'
@@ -109,4 +109,32 @@ const wrappedIndex = (array, index) => {
     return array[i]
 }
 
-export default controllerMesh
+const updateControllerMesh = controller => {
+    if (controller.mesh) {
+        controller.remove(controller.mesh)
+        controller.mesh.geometry.dispose()
+        controller.mesh.material.dispose()
+    }
+
+    const newMesh = controllerMesh(controller.meshGeometryIndex)
+    controller.add(newMesh)
+    controller.mesh = newMesh
+}
+
+const cycleMesh = event => {
+    const controller = event.target
+    controller.meshGeometryIndex += controller.cyclingDirection
+    updateControllerMesh(controller)
+}
+
+const setCyclingDirection = event => event.target.cyclingDirection = event.axes[0] < 0 ? -1 : 1
+
+const onControllerConnected = controller => {
+    updateControllerMesh(controller)
+    controller.addEventListener('thumbpad axes changed', setCyclingDirection)
+    controller.addEventListener('thumbpad press began', cycleMesh)
+}
+
+export {
+    onControllerConnected
+}

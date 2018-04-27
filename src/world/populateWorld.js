@@ -1,7 +1,6 @@
-import {Color, PlaneGeometry} from 'threejs-full-es6'
+import {Color, PlaneGeometry} from 'three-full'
 import textureData from './textureData'
 import setupAtmosphere from './setupAtmosphere'
-import setupVantage from './setupVantage'
 import addItem from './addItem'
 import * as courtyardIntersections from './courtyardIntersections'
 import geometryData from './geometryData'
@@ -9,7 +8,6 @@ import {addPlinthItem} from './plinth'
 
 const populateWorld = async () => {
     setupAtmosphere()
-    setupVantage()
 
     // the grounds
 

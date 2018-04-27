@@ -1,4 +1,4 @@
-import vrEffect from './vrEffect'
+import vr from '../vr'
 
 let time
 let fps = 90
@@ -8,14 +8,14 @@ const RECORDINGS_TO_TAKE = 8192
 const RECORDINGS_TO_SHAVE = 4
 
 setTimeout(() => {
-    if (!vrEffect.isPresenting) {
-        vrEffect.isPresenting = true
+    if (!vr.isPresenting()) {
+        vr.setPresenting(true)
         fps = 60
     }
 }, 5000)
 
-const performanceTest = (fn, ...args) => {
-    if (vrEffect.isPresenting) {
+const update = () => {
+    if (vr.isPresenting()) {
         if (time) {
             recordings.push(Date.now() - time)
         } else {
@@ -33,10 +33,10 @@ const performanceTest = (fn, ...args) => {
             }),
         })
     }
-
-    if (!process.env.PERFORMANCE_TEST_BASE_PERFORMANCE) {
-        fn(args)
-    }
 }
 
-module.exports = performanceTest
+const performanceTest = {
+    update,
+}
+
+export default performanceTest

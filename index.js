@@ -1,12 +1,11 @@
 import 'babel-polyfill'
 import populateWorld from './src/world/populateWorld'
-import prepareViewer from './src/app/prepareViewer'
-import requestAnimationFrame from './src/app/requestAnimationFrame'
-import startSong from './src/audio/startSong'
-import './src/app/keyboard'
+import startSong from './src/song/startSong'
+import attachKeyboard from './src/navigation/keyboard'
+import vr from './src/vr'
 
-prepareViewer()
-requestAnimationFrame()
+vr.requestAnimationFrame()
+attachKeyboard()
 populateWorld()
 
 // contemplated adding a constant for this approx. amount that geometry takes to load,

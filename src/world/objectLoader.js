@@ -1,4 +1,4 @@
-import {OBJLoader} from 'threejs-full-es6'
+import {OBJLoader} from 'three-full'
 
 console.oldTime = console.time
 console.time = (...args) => args[0] !== 'OBJLoader' && console.oldTime.apply(console, args)

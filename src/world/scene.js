@@ -1,4 +1,4 @@
-import {Scene} from 'threejs-full-es6'
+import {Scene} from 'three-full'
 
 const scene = new Scene()
 

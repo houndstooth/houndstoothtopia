@@ -1,10 +1,10 @@
-import player from './player'
 import {ELEVATION_EASING_TIME, ELEVATION_TIER_HEIGHT, HUMAN_HEIGHT} from '../spacetime'
 import {ease} from './easing'
+import vr from '../vr'
 
 let isChanging = false
 
-const update = () => player.position.y = elevation.current
+const update = () => vr.player.position.y = elevation.current
 
 const change = newDirection => {
     if (isChanging) return

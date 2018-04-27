@@ -1,4 +1,4 @@
-import {Color} from 'threejs-full-es6'
+import {Color} from 'three-full'
 
 const BACKGROUND_COLOR = new Color(0xcccce0)
 const DEFAULT_ITEM_COLOR = new Color(0x666666)

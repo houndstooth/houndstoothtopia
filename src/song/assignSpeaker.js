@@ -1,5 +1,5 @@
 import {items} from '../world/items'
-import {Object3D} from 'threejs-full-es6'
+import {Object3D} from 'three-full'
 
 const MAX_TRIES = 30
 

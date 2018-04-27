@@ -1,6 +1,6 @@
-import {AmbientLight, DirectionalLight, Fog, HemisphereLight} from 'threejs-full-es6'
-import scene from '../app/scene'
-import renderer from '../app/renderer'
+import {AmbientLight, DirectionalLight, Fog, HemisphereLight} from 'three-full'
+import scene from './scene'
+import vr from '../vr'
 import {
     AMBIENT_LIGHT_COLOR,
     AMBIENT_LIGHT_INTENSITY,
@@ -41,7 +41,7 @@ const setupAtmosphere = () => {
 
     scene.fog = new Fog(BACKGROUND_COLOR, FOG_NEAR, FOG_FAR)
 
-    renderer.setClearColor(BACKGROUND_COLOR)
+    vr.setBackgroundColor(BACKGROUND_COLOR)
 }
 
 export default setupAtmosphere
