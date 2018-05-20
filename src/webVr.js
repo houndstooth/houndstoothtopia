@@ -1,4 +1,4 @@
-import buildWebVr from 'webvr'
+import vrb from 'vrb'
 import scene from './world/scene'
 import { onControllerConnected } from './world/controllerMesh'
 import { enablePerformanceTesting } from './performance'
@@ -22,7 +22,7 @@ const camerasConfig = {
 const toggle = document.querySelector('#toggle')
 const viewer = document.querySelector('#viewer')
 
-const webVr = buildWebVr({ camerasConfig, scene, onAnimate, onControllerConnected, toggle, viewer })
+const webVr = vrb({ camerasConfig, scene, onAnimate, onControllerConnected, toggle, viewer })
 
 if (process.env.NODE_ENV === 'development') enablePerformanceTesting(webVr)
 

@@ -19,8 +19,8 @@
     "perfit": "^1.0.0",
     "raw-loader": "^0.5.1",
     "three-full": "^6.0.0",
+    "vrb": "^1.0.1",
     "webpack": "^3.3.0",
-    "webpack-dev-server": "^2.11.1",
-    "webvr": "github:cmloegcmluin/webvr"
+    "webpack-dev-server": "^2.11.1"
   }
 }
