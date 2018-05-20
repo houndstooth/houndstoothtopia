@@ -1,5 +1,5 @@
 import assignSpeaker from './assignSpeaker'
-import vr from '../vr'
+import webVr from '../webVr'
 
 const BASE_GAIN = 0.1
 const DEFAULT_SUSTAIN = 6
@@ -21,7 +21,7 @@ const buildEntity = ({notes, voices, noteIndex = 0, nextOnset = 0, nextOffset = 
         const voice = entity.voices[note.pitch]
 
         if (time > entity.nextOnset) {
-            if (vr.isPresenting()) {
+            if (webVr.getIsPresenting()) {
                 voice.setVolume(BASE_GAIN)
             }
             // console.log('duration', note.duration, 'index', entity.noteIndex)

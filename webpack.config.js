@@ -26,13 +26,9 @@ module.exports = {
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.EnvironmentPlugin({
-            'PERFORMANCE_TEST': false,
-            'PERFORMANCE_TEST_BASE_PERFORMANCE': false,
-        })
+        new webpack.EnvironmentPlugin({NODE_ENV: 'development'}),
     ],
     devServer: {
-        port: process.env.DEV_SERVER_PORT,
         hot: true,
         inline: true,
         contentBase: path.join(__dirname, './dist'),

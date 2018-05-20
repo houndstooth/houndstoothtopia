@@ -1,15 +1,15 @@
-import {ELEVATION_EASING_TIME, ELEVATION_TIER_HEIGHT, HUMAN_HEIGHT} from '../spacetime'
+import {ELEVATION_EASING_TIME, ELEVATION_TIER_HEIGHT, AVERAGE_HUMAN_HEIGHT} from '../spacetime'
 import {ease} from './easing'
-import vr from '../vr'
+import webVr from '../webVr'
 
 let isChanging = false
 
-const update = () => vr.player.position.y = elevation.current
+const update = () => webVr.player.position.y = elevation.current
 
 const change = newDirection => {
     if (isChanging) return
     const newTarget = precisionRound(elevation.current + ELEVATION_TIER_HEIGHT * newDirection, 1)
-    if (newTarget < HUMAN_HEIGHT) return
+    if (newTarget < AVERAGE_HUMAN_HEIGHT) return
     isChanging = true
 
     ease(elevation, 'current', newTarget, ELEVATION_EASING_TIME, () => {
@@ -24,7 +24,7 @@ const precisionRound = (number, precision) => {
 }
 
 const elevation = {
-    current: HUMAN_HEIGHT,
+    current: AVERAGE_HUMAN_HEIGHT,
     change,
     update,
 }

@@ -1,11 +1,11 @@
-import vr from '../vr'
+import webVr from '../webVr'
 
 const buildVoice = pitch => {
-    const positionalSound = vr.createPositionalSound()
+    const positionalSound = webVr.createPositionalSound()
 
     const gainNode = positionalSound.getOutput()
 
-    const oscillator = vr.createSpatialOscillator()
+    const oscillator = webVr.createSpatialOscillator()
     oscillator.connect(gainNode)
     oscillator.type = 'sine'
     oscillator.frequency.value = pitch

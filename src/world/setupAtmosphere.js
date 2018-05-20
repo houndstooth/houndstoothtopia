@@ -1,6 +1,6 @@
 import {AmbientLight, DirectionalLight, Fog, HemisphereLight} from 'three-full'
 import scene from './scene'
-import vr from '../vr'
+import webVr from '../webVr'
 import {
     AMBIENT_LIGHT_COLOR,
     AMBIENT_LIGHT_INTENSITY,
@@ -41,7 +41,7 @@ const setupAtmosphere = () => {
 
     scene.fog = new Fog(BACKGROUND_COLOR, FOG_NEAR, FOG_FAR)
 
-    vr.setBackgroundColor(BACKGROUND_COLOR)
+    webVr.setBackgroundColor(BACKGROUND_COLOR)
 }
 
 export default setupAtmosphere

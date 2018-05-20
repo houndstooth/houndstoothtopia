@@ -14,7 +14,7 @@ const addItem = ({
                            scale = DEFAULT_ITEM_SCALE,
                            rotation = DEFAULT_ITEM_ROTATION,
                        }) => {
-  setTimeout(() => {
+  window.setTimeout(() => {
     const material = texture ? new MeshBasicMaterial({
         map: texture,
         transparent: true

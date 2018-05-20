@@ -2,13 +2,11 @@
   "name": "houndstoothtopia",
   "version": "1.0.0",
   "scripts": {
-    "start": "sh ./bin/cross_env_pre_source.sh webpack-dev-server",
-    "deploy": "sh ./bin/cross_env_pre_source.sh 'sh ./bin/deploy.sh'",
-    "simplify": "sh ./bin/cross_env_pre_source.sh 'node ./simplify/simplify.js'",
-    "performance": "sh ./bin/cross_env_pre_source.sh 'sh ./bin/performance.sh'",
-    "performance-base": "sh ./bin/cross_env_pre_source.sh 'sh ./bin/performanceBase.sh'",
-    "kill": "sh ./bin/kill_process_by_port.sh",
-    "kill-likely-interference": "sh ./bin/kill_likely_interference.sh"
+    "start": "webpack-dev-server",
+    "deploy": "sh ./bin/deploy.sh",
+    "simplify": "node ./simplify/simplify.js",
+    "performance": "perfit",
+    "performance-base": "perfit --base"
   },
   "devDependencies": {
     "@tweenjs/tween.js": "^17.2.0",
@@ -17,11 +15,10 @@
     "babel-polyfill": "^6.23.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-0": "^6.24.1",
-    "csv": "^3.0.2",
     "file-loader": "^0.11.2",
+    "perfit": "^1.0.0",
     "raw-loader": "^0.5.1",
     "three-full": "^6.0.0",
-    "useragent": "^2.3.0",
     "webpack": "^3.3.0",
     "webpack-dev-server": "^2.11.1",
     "webvr": "github:cmloegcmluin/webvr"

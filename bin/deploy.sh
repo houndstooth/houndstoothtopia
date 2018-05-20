@@ -10,5 +10,5 @@ if [[ $? == 1 ]] ; then
     fi
 fi
 
-webpack
+NODE_ENV=production webpack
 cf zero-downtime-push houndstoothtopia -f manifest.yml
