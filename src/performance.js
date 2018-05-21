@@ -38,7 +38,7 @@ const startRecording = perfit => perfit.turnOn()
 const inVrMode = webVr => webVr.getIsPresenting()
 
 const enablePerformanceTesting = webVr => {
-    webVr.changeAnimate(oldAnimate => perfit.getInjectedFunction(oldAnimate))
+    webVr.changeOnAnimate(oldAnimate => perfit.getInjectedFunction(oldAnimate))
 
     startCheckingIfInVrMode(webVr)
 
