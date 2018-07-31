@@ -12,10 +12,4 @@ handlers:
   upload: dist/(.*)
 
 skip_files:
-- .idea/
-- bin/
-- geometry/
-- node_modules/
-- performance/
-- src/
-- texture/
+- (?!^dist)
