@@ -28,8 +28,6 @@ module.exports = {
         new webpack.EnvironmentPlugin({NODE_ENV: 'development'}),
     ],
     devServer: {
-        hot: true,
-        inline: true,
         contentBase: path.join(__dirname, './dist'),
     }
 }
