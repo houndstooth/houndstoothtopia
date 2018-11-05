@@ -12,12 +12,14 @@ const showcaser = {
 }
 
 const addShowcaser = () => {
+    const name = wrappedIndex(idealMeshCycle, showcaser.index)
     addItem({
         name: 'showcaser',
-        geometry: geometryData.geometry[wrappedIndex(idealMeshCycle, showcaser.index)],
+        geometry: geometryData.geometry[name],
         color: CONTROLLER_COLOR,
         scale: [100,100,100],
     })
+    document.querySelector('#toggle').innerHTML = name
 }
 
 const cycleShowcaser = (direction) => {
