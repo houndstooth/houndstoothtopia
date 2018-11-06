@@ -1,7 +1,7 @@
 import elevation from './elevation'
 import locomotion from './locomotion'
 import deleteItems from '../world/deleteItems'
-import {addShowcaser,cycleShowcaser} from '../world/showcaser'
+import {setupShowcaser,cycleShowcaser} from '../world/showcaser'
 
 const KEY_ASCII_CODES = {
     W: 87,
@@ -65,8 +65,7 @@ const onKeyDown = event => {
             elevation.change(-1)
             break
         case KEY_ASCII_CODES.X:
-            deleteItems()
-            addShowcaser()
+            setupShowcaser()
             break
         case KEY_ASCII_CODES.Z:
             cycleShowcaser(-1)

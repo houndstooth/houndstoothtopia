@@ -30,3 +30,13 @@ body:active {
     cursor: pointer;
     pointer-events: all;
 }
+
+#showcase {
+    cursor: pointer;
+    pointer-events: all;
+}
+
+#showcase div {
+    display: inline;
+    padding-left: 10px;
+}
