@@ -2,6 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 
 module.exports = {
+    mode: 'none',
     entry: './index.js',
     output: {
         path: path.join(__dirname, './dist'),
