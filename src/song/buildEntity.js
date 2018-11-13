@@ -1,5 +1,5 @@
-import assignSpeaker from './assignSpeaker'
 import webVr from '../webVr'
+import {items} from '../world/items'
 
 const BASE_GAIN = 0.1
 const DEFAULT_SUSTAIN = 6
@@ -13,7 +13,7 @@ const buildEntity = ({notes, voices, noteIndex = 0, nextOnset = 0, nextOffset = 
         nextOnset,
     }
 
-    const speaker = assignSpeaker()
+    const speaker = items['mainHall'][0]
     voices.forEach(voice => speaker.add(voice))
 
     entity.update = time => {
