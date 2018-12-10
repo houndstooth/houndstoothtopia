@@ -11,7 +11,7 @@ const playSong = async () => {
         webVr.player.position.z,
     ]
     const houndstoothtopiaTheme = await compilePattern({spec, material})
-    setupPerformer({autoStart: {threadSpecs: houndstoothtopiaTheme, vrb: webVr}})
+    await setupPerformer({autoStart: {threadSpecs: houndstoothtopiaTheme, vrb: webVr}})
 }
 
 export {
