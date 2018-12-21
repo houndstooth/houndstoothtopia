@@ -1,4 +1,4 @@
-import {houndstoothtopiaThemeSnapshot} from '@musical-patterns/pattern-houndstoothtopia-theme'
+import { snapshot } from '@musical-patterns/pattern-houndstoothtopia-theme'
 import webVr from './webVr'
 import {setupPerformer} from '@musical-patterns/performer'
 
@@ -10,7 +10,7 @@ const playSong = async () => {
                 webVr.player.position.y,
                 webVr.player.position.z,
             ],
-            threadSpecs: houndstoothtopiaThemeSnapshot,
+            threadSpecs: snapshot,
             vrb: webVr,
         },
     })
