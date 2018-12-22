@@ -29,6 +29,7 @@ module.exports = {
         new webpack.EnvironmentPlugin({NODE_ENV: 'development'}),
     ],
     devServer: {
+        disableHostCheck: true,
         contentBase: path.join(__dirname, './dist'),
     }
 }
