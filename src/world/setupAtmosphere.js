@@ -1,4 +1,4 @@
-import {AmbientLight, DirectionalLight, Fog, HemisphereLight} from 'three-full'
+import {AmbientLight, DirectionalLight, Fog, HemisphereLight} from 'three'
 import scene from './scene'
 import webVr from '../webVr'
 import {

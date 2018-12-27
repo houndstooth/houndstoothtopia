@@ -1,4 +1,4 @@
-import objectLoader from './objectLoader'
+import { objectLoader } from './objectLoader'
 
 const geometry = {}
 const metadata = {}

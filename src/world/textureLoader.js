@@ -1,3 +1,3 @@
-import {TextureLoader} from 'three-full'
+import {TextureLoader} from 'three'
 
 export default new TextureLoader()

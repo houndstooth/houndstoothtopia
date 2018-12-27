@@ -1,4 +1,4 @@
-import {Scene} from 'three-full'
+import {Scene} from 'three'
 
 const scene = new Scene()
 

@@ -1,4 +1,4 @@
-import {Color, PlaneGeometry} from 'three-full'
+import {Color, PlaneGeometry} from 'three'
 import textureData from './textureData'
 import setupAtmosphere from './setupAtmosphere'
 import addItem from './addItem'

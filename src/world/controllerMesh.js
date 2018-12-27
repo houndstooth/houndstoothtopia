@@ -1,4 +1,4 @@
-import {Mesh, MeshLambertMaterial} from 'three-full'
+import {Mesh, MeshLambertMaterial} from 'three'
 import geometryData from './geometryData'
 import {CONTROLLER_COLOR} from '../color'
 import {CONTROLLER_SCALE} from '../spacetime'
