@@ -22,7 +22,7 @@
     "raw-loader": "^0.5.1",
     "three": "^0.99.0",
     "three-obj-loader": "^1.1.3",
-    "vrb": "^1.1.38",
+    "vrb": "^1.1.41",
     "webpack": "^4.28.2",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.14"
