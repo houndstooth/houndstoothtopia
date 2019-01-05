@@ -19,11 +19,9 @@ const camerasConfig = {
     PERSPECTIVE_FRUSTUM_FAR,
 }
 
-const toggle = document.querySelector('#toggle')
 const viewer = document.querySelector('#viewer')
 
 const webVr = buildVrb({ camerasConfig, scene, onAnimate, onControllerConnected, viewer })
-toggle.onclick = webVr.toggleVr
 
 if (process.env.NODE_ENV === 'development') enablePerformanceTesting(webVr)
 
