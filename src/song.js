@@ -1,6 +1,6 @@
 import {snapshot} from '@musical-patterns/pattern-houndstoothtopia-theme'
 import webVr from './webVr'
-import {enableImmersiveAudio, perform, setupPerformer} from '@musical-patterns/performer'
+import {enableImmersiveAudio, setupPerformer} from '@musical-patterns/performer'
 
 const playSong = async () => {
     await setupPerformer({threadSpecs: snapshot})
@@ -10,13 +10,8 @@ const playSong = async () => {
         webVr.player.position.z,
     ]
 
-    const enterImmersiveAudioHandler = enableImmersiveAudio({vrb: webVr, homePosition})
     const toggle = document.querySelector('#toggle')
-
-    toggle.onclick = () => {
-        enterImmersiveAudioHandler()
-        perform(snapshot)
-    }
+    toggle.onclick = enableImmersiveAudio({vrb: webVr, homePosition})
 }
 
 export {

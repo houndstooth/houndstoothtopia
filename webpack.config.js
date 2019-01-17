@@ -31,5 +31,6 @@ module.exports = {
     devServer: {
         disableHostCheck: true,
         contentBase: path.join(__dirname, './dist'),
+        open: true,
     }
 }
