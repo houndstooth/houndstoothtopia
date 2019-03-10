@@ -3,7 +3,7 @@ import webVr from './webVr'
 import {enableImmersiveAudio, setupPerformer} from '@musical-patterns/performer'
 
 const playSong = async () => {
-    await setupPerformer({threadSpecs: snapshot})
+    await setupPerformer({voices: snapshot})
     const homePosition = [
         webVr.player.position.x,
         webVr.player.position.y,
