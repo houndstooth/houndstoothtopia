@@ -9,12 +9,13 @@
     "performance-base": "perfit --base"
   },
   "devDependencies": {
-    "@babel/core": "^7.2.2",
-    "@babel/preset-env": "^7.2.3",
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
     "@cmloegcmluin/shape-up": "^1.0.1",
-    "@musical-patterns/pattern-houndstoothtopia-theme": "^1.0.126",
-    "@musical-patterns/performer": "^1.0.200",
-    "@tweenjs/tween.js": "^17.2.0",
+    "@musical-patterns/compiler": "^1.0.129",
+    "@musical-patterns/pattern-houndstoothtopia-theme": "^1.0.141",
+    "@musical-patterns/performer": "^1.0.222",
+    "@tweenjs/tween.js": "^17.3.0",
     "babel-loader": "^8.0.5",
     "babel-polyfill": "^6.23.0",
     "file-loader": "^2.0.0",
@@ -22,9 +23,9 @@
     "raw-loader": "^0.5.1",
     "three": "^0.99.0",
     "three-obj-loader": "^1.1.3",
-    "vrb": "^1.1.49",
-    "webpack": "^4.28.4",
-    "webpack-cli": "^3.2.1",
-    "webpack-dev-server": "^3.1.14"
+    "vrb": "^1.1.53",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
   }
 }

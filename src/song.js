@@ -1,9 +1,11 @@
-import {snapshot} from '@musical-patterns/pattern-houndstoothtopia-theme'
+import {pattern} from '@musical-patterns/pattern-houndstoothtopia-theme'
 import webVr from './webVr'
 import {enableImmersiveAudio, setupPerformer} from '@musical-patterns/performer'
+import {compilePattern} from '@musical-patterns/compiler'
 
 const playSong = async () => {
-    await setupPerformer({voices: snapshot})
+    const voices = await compilePattern(pattern)
+    await setupPerformer({voices})
     const homePosition = [
         webVr.player.position.x,
         webVr.player.position.y,
