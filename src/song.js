@@ -4,7 +4,7 @@ import {enableImmersiveAudio, setupPerformer} from '@musical-patterns/performer'
 import {compilePattern} from '@musical-patterns/compiler'
 
 const playSong = async () => {
-    const voices = await compilePattern(pattern)
+    const { voices } = await compilePattern(pattern)
     await setupPerformer({voices})
     const homePosition = [
         webVr.player.position.x,
