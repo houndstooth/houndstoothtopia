@@ -1,4 +1,4 @@
-import TWEEN from '@tweenjs/tween.js/src/Tween'
+import TWEEN from '@tweenjs/tween.js'
 
 export const ease = (object, property, target, easingTime, onComplete = () => {
 }) => {

@@ -10,7 +10,7 @@ const loadAll = async () => {
     await Promise.all(
         context.keys().map(path => {
             return new Promise(resolve => {
-                textureLoader.load(context(path), result => {
+                textureLoader.load(context(path).default, result => {
                     texture[pathToName(path)] = result
                     resolve()
                 })

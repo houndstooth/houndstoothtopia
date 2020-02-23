@@ -21,7 +21,7 @@ const pathToName = path => path.replace('./', '').replace('.obj', '')
 
 const nameToPath = name => './' + name + '.obj'
 
-const loadOne = path => geometry[pathToName(path)] = objectLoader.parse(context(path)).children[0].geometry
+const loadOne = path => geometry[pathToName(path)] = objectLoader.parse(context(path).default).children[0].geometry
 
 const load = name => geometry[name] || loadOne(context.keys().find(key => key === nameToPath(name)))
 
@@ -29,7 +29,7 @@ const loadTheRest = () => context.keys().forEach(path => geometry[pathToName(pat
 
 context.keys().forEach(path => {
     let minimumY = 0
-    context(path).split('\n').forEach(line => {
+    context(path).default.split('\n').forEach(line => {
         const [type, _, yAsString, __] = line.split(' ')
         if (type === VERTEX) {
             const y = parseFloat(yAsString)
