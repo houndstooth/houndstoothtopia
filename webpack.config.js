@@ -14,6 +14,7 @@ module.exports = {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader',
+                options: {presets:["@babel/preset-env"]},
             },
             {
                 test: /\.obj$/,
@@ -29,8 +30,7 @@ module.exports = {
         new webpack.EnvironmentPlugin({NODE_ENV: 'development'}),
     ],
     devServer: {
-        disableHostCheck: true,
-        contentBase: path.join(__dirname, './dist'),
+        static: path.join(__dirname, './dist'),
         open: true,
     }
 }
