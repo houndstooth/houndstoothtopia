@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-NODE_ENV=production ./node_modules/.bin/webpack
+NODE_ENV=production npx webpack
 
 if [[ $(gcloud config configurations list | grep -m1 houndstoothtopia) ]] ; then
 	echo "The 'houndstoothtopia' configuration already exists."
