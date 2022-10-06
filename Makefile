@@ -1,8 +1,11 @@
 setup:
-	npm i
+	./bin/setup.sh
+
+build:
+	./bin/build.sh
 
 start:
-	npm start
+	npx webpack-dev-server --color
 
 deploy:
 	./bin/deploy.sh

@@ -2,8 +2,6 @@
   "name": "houndstoothtopia",
   "version": "1.0.0",
   "scripts": {
-    "start": "webpack-dev-server --color",
-    "deploy": "sh ./bin/deploy.sh",
     "simplify": "shape-up",
     "performance": "perfit",
     "performance-base": "perfit --base"
