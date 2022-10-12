@@ -24,7 +24,7 @@ body:active {
     right: 1rem;
 }
 
-#toggle {
+#toggle, #song {
     font-size: 24px;
     font-family: Arial;
     cursor: pointer;
